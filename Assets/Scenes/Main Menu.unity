@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1095,7 +1095,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enemies
+  m_Text: Resources
 --- !u!222 &252921118
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2068,7 +2068,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 574850669}
-        m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: ChangeTab
         m_Mode: 3
         m_Arguments:
@@ -2201,7 +2201,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 574850669}
-        m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: ChangeTab
         m_Mode: 3
         m_Arguments:
@@ -2534,7 +2534,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 574850664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb3e0b1206abe0b4c91afc4efe56d722, type: 3}
+  m_Script: {fileID: 11500000, guid: ea643cb6892362e4ea8bc9c7f39f0bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   difficulty: {fileID: 427460704}
@@ -2545,15 +2545,15 @@ MonoBehaviour:
   tutorialButtons:
   - {fileID: 504906017}
   - {fileID: 519503197}
+  - {fileID: 1203995955}
   - {fileID: 1304968987}
   - {fileID: 1401836781}
-  - {fileID: 1203995955}
   tutorialPanels:
   - {fileID: 521228261}
   - {fileID: 78738994}
+  - {fileID: 1340080024}
   - {fileID: 842963832}
   - {fileID: 1064245597}
-  - {fileID: 1340080024}
 --- !u!1 &621505869
 GameObject:
   m_ObjectHideFlags: 0
@@ -2638,7 +2638,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 574850669}
-        m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: StartBtn
         m_Mode: 1
         m_Arguments:
@@ -3349,7 +3349,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 574850669}
-        m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: QuitBtn
         m_Mode: 1
         m_Arguments:
@@ -3556,13 +3556,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 574850669}
-        m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: ChangeTab
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3969,13 +3969,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 574850669}
-        m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: ChangeTab
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4332,13 +4332,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 574850669}
-        m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: ChangeTab
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

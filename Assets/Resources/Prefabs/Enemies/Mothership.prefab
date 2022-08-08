@@ -1,0 +1,2549 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5695849288901393922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5695849288901393935}
+  - component: {fileID: 5695849288901393932}
+  - component: {fileID: 5695849288901393923}
+  m_Layer: 12
+  m_Name: Mothership
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5695849288901393935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695849288901393922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 641258010313264673}
+  - {fileID: 6738142420522834365}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &5695849288901393932
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695849288901393922}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 10
+  m_AngularDrag: 2.5
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
+--- !u!114 &5695849288901393923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695849288901393922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a57c41e31f38d4f91ec746114f30ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1000
+  currHealth: 0
+  bulletSource:
+  - {fileID: 5695849289505561541}
+  - {fileID: 7644531206310185625}
+  - {fileID: 7644531206542056151}
+  - {fileID: 7644531207367599057}
+  - {fileID: 7644531206974064838}
+  - {fileID: 7644531205855976544}
+  - {fileID: 7644531206997674187}
+  - {fileID: 7644531206050656759}
+  - {fileID: 7644531206533517732}
+  - {fileID: 7644531207213211470}
+  - {fileID: 7644531207336789288}
+  - {fileID: 7644531205959958647}
+  - {fileID: 7644531206473034881}
+  - {fileID: 7644531206412452758}
+  - {fileID: 7644531206556052356}
+  - {fileID: 7644531206492110879}
+  - {fileID: 7644531207218307086}
+  - {fileID: 7644531206663903003}
+  - {fileID: 7644531206964806433}
+  - {fileID: 7644531205988767633}
+  - {fileID: 7644531206623462668}
+  - {fileID: 7644531205543096837}
+  - {fileID: 7644531207301405057}
+  - {fileID: 7644531206737879261}
+  - {fileID: 7644531206680167397}
+  - {fileID: 7644531205835388791}
+  - {fileID: 7644531205545329594}
+  - {fileID: 7644531206893779448}
+  - {fileID: 7644531205825028985}
+  - {fileID: 7644531206686339854}
+  - {fileID: 7644531205938360968}
+  - {fileID: 7644531205561607881}
+  - {fileID: 7644531207086102463}
+  - {fileID: 7644531207308000352}
+  - {fileID: 7644531205587961620}
+  - {fileID: 7644531207048500399}
+  - {fileID: 7644531206170024133}
+  - {fileID: 7644531205731800507}
+  - {fileID: 7644531206622910792}
+  - {fileID: 7644531206782327073}
+  - {fileID: 7644531206228786782}
+  - {fileID: 7644531205723397774}
+  - {fileID: 7644531206294429568}
+  - {fileID: 7644531206254242041}
+  - {fileID: 7644531207394806509}
+  - {fileID: 7644531205572248052}
+  - {fileID: 7644531206835034971}
+  - {fileID: 7644531206016930496}
+  - {fileID: 7644531207392280384}
+  - {fileID: 7644531205620005929}
+  - {fileID: 7644531207226865264}
+  - {fileID: 7644531205888336622}
+  - {fileID: 7644531206130946374}
+  - {fileID: 7644531205968515691}
+  - {fileID: 7644531205883889029}
+  - {fileID: 7644531205872635615}
+  - {fileID: 7644531205833194243}
+  - {fileID: 7644531206946185237}
+  - {fileID: 7644531205774119951}
+  - {fileID: 7644531205979326679}
+  - {fileID: 7644531206415380008}
+  - {fileID: 7644531206961646377}
+  - {fileID: 7644531206613716217}
+  - {fileID: 7644531206392628079}
+  - {fileID: 7644531207333211711}
+  - {fileID: 7644531207244768504}
+  - {fileID: 7644531205859705184}
+  - {fileID: 7644531205990955597}
+  - {fileID: 7644531205514730087}
+  - {fileID: 7644531206868116960}
+  - {fileID: 7644531206446095363}
+  - {fileID: 7644531207255354221}
+  bulletPrefab: {fileID: 8187746626215843588, guid: dc22ac5d0b525864594327df2658c724, type: 3}
+  fireSpeed: 0.001
+  bulletDamage: 0.1
+  specialSource: {fileID: 0}
+  targetTag: 
+  moveSpeed: 2
+  distFromEnemies: 0
+  moveSpeedFromEnemies: 0
+  attackDist: 100
+  dodgeDist: 13
+  minSpawnTime: 0
+  maxSpawnTime: 0
+  deathDropPrefab: {fileID: 0}
+  deathForce: 10
+  deathRotation: 10
+  distFromPlayer: 25
+  rotationSpeed: 80
+  startTimer: 80
+  startWarpDelay: 30
+  minWarpDelay: 15
+  difficultyDelayMod: 0.05
+  totalTime: 0
+  elapsedTime: 0
+--- !u!1 &5695849289505561594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5695849289505561541}
+  m_Layer: 12
+  m_Name: Fire point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5695849289505561541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695849289505561594}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 11.5}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7644531205514730086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205514730087}
+  m_Layer: 12
+  m_Name: Fire point (44)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205514730087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205514730086}
+  m_LocalRotation: {x: -0, y: -0.96816325, z: -0, w: -0.25031966}
+  m_LocalPosition: {x: 11.028981, y: 0, z: -10.0838375}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 70
+  m_LocalEulerAnglesHint: {x: 0, y: -208.993, z: 0}
+--- !u!1 &7644531205543096836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205543096837}
+  m_Layer: 12
+  m_Name: Fire point (13)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205543096837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205543096836}
+  m_LocalRotation: {x: -0, y: -0.5996197, z: -0, w: -0.8002851}
+  m_LocalPosition: {x: 11.822018, y: 0, z: 8.970004}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: -286.315, z: 0}
+--- !u!1 &7644531205545329597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205545329594}
+  m_Layer: 12
+  m_Name: Fire Point (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205545329594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205545329597}
+  m_LocalRotation: {x: -0, y: 0.0011524587, z: -0, w: 0.99999934}
+  m_LocalPosition: {x: 2.7288415, y: 0, z: 12.0429325}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0.132, z: 0}
+--- !u!1 &7644531205561607880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205561607881}
+  m_Layer: 12
+  m_Name: Fire Point (12)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205561607881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205561607880}
+  m_LocalRotation: {x: -0, y: -0.9754708, z: -0, w: -0.22012906}
+  m_LocalPosition: {x: 6.2959876, y: 0, z: -10.678683}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: 0, y: -205.433, z: 0}
+--- !u!1 &7644531205572248055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205572248052}
+  m_Layer: 12
+  m_Name: Fire point (29)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205572248052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205572248055}
+  m_LocalRotation: {x: -0, y: -0.5351325, z: -0, w: -0.8447681}
+  m_LocalPosition: {x: 10.302661, y: 0, z: 10.678354}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 47
+  m_LocalEulerAnglesHint: {x: 0, y: -295.294, z: 0}
+--- !u!1 &7644531205587961623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205587961620}
+  m_Layer: 12
+  m_Name: Fire Point (14)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205587961620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205587961623}
+  m_LocalRotation: {x: -0, y: -0.58782774, z: -0, w: -0.8089861}
+  m_LocalPosition: {x: 10.821016, y: 0, z: 5.7771654}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 36
+  m_LocalEulerAnglesHint: {x: 0, y: -287.99402, z: 0}
+--- !u!1 &7644531205620005928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205620005929}
+  m_Layer: 12
+  m_Name: Fire Point (16)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205620005929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205620005928}
+  m_LocalRotation: {x: -0, y: 0.0015846983, z: -0, w: 0.99999875}
+  m_LocalPosition: {x: -1.6675338, y: 0, z: 11.901703}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 51
+  m_LocalEulerAnglesHint: {x: 0, y: 0.182, z: 0}
+--- !u!1 &7644531205723397761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205723397774}
+  m_Layer: 12
+  m_Name: Fire point (25)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205723397774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205723397761}
+  m_LocalRotation: {x: -0, y: -0.9286665, z: -0, w: 0.37091595}
+  m_LocalPosition: {x: -6.7489085, y: 0, z: -13.298883}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 43
+  m_LocalEulerAnglesHint: {x: 0, y: -136.456, z: 0}
+--- !u!1 &7644531205731800506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205731800507}
+  m_Layer: 12
+  m_Name: Fire point (21)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205731800507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205731800506}
+  m_LocalRotation: {x: -0, y: -0.39829195, z: -0, w: 0.91725874}
+  m_LocalPosition: {x: -13.105637, y: 0, z: 9.540793}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 39
+  m_LocalEulerAnglesHint: {x: 0, y: -46.943, z: 0}
+--- !u!1 &7644531205774119950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205774119951}
+  m_Layer: 12
+  m_Name: Fire Point (22)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205774119951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205774119950}
+  m_LocalRotation: {x: -0, y: -0.70382196, z: -0, w: -0.7103765}
+  m_LocalPosition: {x: 12.019578, y: 0, z: 2.325751}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 60
+  m_LocalEulerAnglesHint: {x: 0, y: -270.531, z: 0}
+--- !u!1 &7644531205825028984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205825028985}
+  m_Layer: 12
+  m_Name: Fire Point (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205825028985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205825028984}
+  m_LocalRotation: {x: -0, y: -0.80758435, z: -0, w: 0.58975214}
+  m_LocalPosition: {x: -10.718414, y: 0, z: -5.5666823}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: -107.721, z: 0}
+--- !u!1 &7644531205833194242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205833194243}
+  m_Layer: 12
+  m_Name: Fire Point (21)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205833194243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205833194242}
+  m_LocalRotation: {x: -0, y: -0.9883657, z: -0, w: 0.15209623}
+  m_LocalPosition: {x: -5.0832806, y: 0, z: -10.843173}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 58
+  m_LocalEulerAnglesHint: {x: 0, y: -162.503, z: 0}
+--- !u!1 &7644531205835388790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205835388791}
+  m_Layer: 12
+  m_Name: Fire Point (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205835388791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205835388790}
+  m_LocalRotation: {x: -0, y: -0.15023693, z: -0, w: 0.98865}
+  m_LocalPosition: {x: -5.1089044, y: 0, z: 10.804424}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: -17.281, z: 0}
+--- !u!1 &7644531205855976547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205855976544}
+  m_Layer: 12
+  m_Name: Fire Point (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205855976544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205855976547}
+  m_LocalRotation: {x: -0, y: -0.6315451, z: -0, w: 0.7753392}
+  m_LocalPosition: {x: -11.477007, y: 0, z: 4.139999}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: -78.328, z: 0}
+--- !u!1 &7644531205859705187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205859705184}
+  m_Layer: 12
+  m_Name: Fire point (42)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205859705184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205859705187}
+  m_LocalRotation: {x: -0, y: -0.9976657, z: -0, w: -0.0682879}
+  m_LocalPosition: {x: 7.199777, y: 0, z: -12.838081}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 68
+  m_LocalEulerAnglesHint: {x: 0, y: -187.831, z: 0}
+--- !u!1 &7644531205872635614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205872635615}
+  m_Layer: 12
+  m_Name: Fire Point (20)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205872635615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205872635614}
+  m_LocalRotation: {x: -0, y: -0.9975821, z: -0, w: -0.06949804}
+  m_LocalPosition: {x: 2.764877, y: 0, z: -12.013778}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 57
+  m_LocalEulerAnglesHint: {x: 0, y: -187.97, z: 0}
+--- !u!1 &7644531205883889028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205883889029}
+  m_Layer: 12
+  m_Name: Fire point (34)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205883889029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205883889028}
+  m_LocalRotation: {x: -0, y: -0.9972609, z: -0, w: 0.07396377}
+  m_LocalPosition: {x: -0.57913584, y: 0, z: -11.515024}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 56
+  m_LocalEulerAnglesHint: {x: 0, y: -171.517, z: 0}
+--- !u!1 &7644531205888336609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205888336622}
+  m_Layer: 12
+  m_Name: Fire point (33)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205888336622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205888336609}
+  m_LocalRotation: {x: -0, y: -0.6528697, z: -0, w: 0.75747025}
+  m_LocalPosition: {x: -11.432514, y: 0, z: 1.3124275}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 53
+  m_LocalEulerAnglesHint: {x: 0, y: -81.517, z: 0}
+--- !u!1 &7644531205938360971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205938360968}
+  m_Layer: 12
+  m_Name: Fire point (18)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205938360968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205938360971}
+  m_LocalRotation: {x: -0, y: -0.9969313, z: -0, w: -0.078281105}
+  m_LocalPosition: {x: 2.9564264, y: 0, z: -11.206415}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 32
+  m_LocalEulerAnglesHint: {x: 0, y: -188.98, z: 0}
+--- !u!1 &7644531205959958646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205959958647}
+  m_Layer: 12
+  m_Name: Fire Point (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205959958647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205959958646}
+  m_LocalRotation: {x: -0, y: -0.75118095, z: -0, w: -0.6600964}
+  m_LocalPosition: {x: 11.569024, y: 0, z: -3.8869922}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: -262.614, z: 0}
+--- !u!1 &7644531205968515690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205968515691}
+  m_Layer: 12
+  m_Name: Fire Point (19)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205968515691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205968515690}
+  m_LocalRotation: {x: -0, y: -0.57246864, z: -0, w: 0.8199267}
+  m_LocalPosition: {x: -10.760701, y: 0, z: 5.8165913}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 55
+  m_LocalEulerAnglesHint: {x: 0, y: -69.845, z: 0}
+--- !u!1 &7644531205979326678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205979326679}
+  m_Layer: 12
+  m_Name: Fire Point (23)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205979326679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205979326678}
+  m_LocalRotation: {x: -0, y: -0.7979463, z: -0, w: -0.6027286}
+  m_LocalPosition: {x: 10.848973, y: 0, z: -5.5223684}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 61
+  m_LocalEulerAnglesHint: {x: 0, y: -254.131, z: 0}
+--- !u!1 &7644531205988767632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205988767633}
+  m_Layer: 12
+  m_Name: Fire point (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205988767633
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205988767632}
+  m_LocalRotation: {x: -0, y: -0.94562274, z: -0, w: -0.32526547}
+  m_LocalPosition: {x: 12.2589655, y: 0, z: -11.661005}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: -217.963, z: 0}
+--- !u!1 &7644531205990955596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531205990955597}
+  m_Layer: 12
+  m_Name: Fire point (43)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531205990955597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531205990955596}
+  m_LocalRotation: {x: -0, y: -0.9670905, z: -0, w: -0.2544329}
+  m_LocalPosition: {x: 10.384515, y: 0, z: -13.313095}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 69
+  m_LocalEulerAnglesHint: {x: 0, y: -209.48, z: 0}
+--- !u!1 &7644531206016930499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206016930496}
+  m_Layer: 12
+  m_Name: Fire point (31)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206016930496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206016930499}
+  m_LocalRotation: {x: -0, y: -0.37091595, z: -0, w: -0.9286665}
+  m_LocalPosition: {x: 6.526243, y: 0, z: 13.504557}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 49
+  m_LocalEulerAnglesHint: {x: 0, y: -316.456, z: 0}
+--- !u!1 &7644531206050656758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206050656759}
+  m_Layer: 12
+  m_Name: Fire Point (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206050656759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206050656758}
+  m_LocalRotation: {x: -0, y: -0.9897094, z: -0, w: -0.1430925}
+  m_LocalPosition: {x: 4.531, y: 0, z: -11.499972}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: -196.454, z: 0}
+--- !u!1 &7644531206130946393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206130946374}
+  m_Layer: 12
+  m_Name: Fire Point (18)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206130946374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206130946393}
+  m_LocalRotation: {x: -0, y: -0.7086989, z: -0, w: 0.7055111}
+  m_LocalPosition: {x: -11.931317, y: 0, z: -2.0315392}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 54
+  m_LocalEulerAnglesHint: {x: 0, y: -90.258, z: 0}
+--- !u!1 &7644531206170024132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206170024133}
+  m_Layer: 12
+  m_Name: Fire point (20)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206170024133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206170024132}
+  m_LocalRotation: {x: -0, y: -0.2189457, z: -0, w: 0.97573704}
+  m_LocalPosition: {x: -9.925119, y: 0, z: 10.043379}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 38
+  m_LocalEulerAnglesHint: {x: 0, y: -25.294, z: 0}
+--- !u!1 &7644531206228786769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206228786782}
+  m_Layer: 12
+  m_Name: Fire point (24)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206228786782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206228786769}
+  m_LocalRotation: {x: -0, y: -0.9302348, z: -0, w: 0.366965}
+  m_LocalPosition: {x: -10.022708, y: 0, z: -13.653191}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 42
+  m_LocalEulerAnglesHint: {x: 0, y: -136.943, z: 0}
+--- !u!1 &7644531206254242040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206254242041}
+  m_Layer: 12
+  m_Name: Fire point (27)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206254242041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206254242040}
+  m_LocalRotation: {x: -0, y: -0.91725874, z: -0, w: -0.39829195}
+  m_LocalPosition: {x: 13.954358, y: 0, z: -9.631554}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 45
+  m_LocalEulerAnglesHint: {x: 0, y: -226.943, z: 0}
+--- !u!1 &7644531206294429571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206294429568}
+  m_Layer: 12
+  m_Name: Fire point (26)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206294429568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206294429571}
+  m_LocalRotation: {x: -0, y: -0.9757371, z: -0, w: -0.21894562}
+  m_LocalPosition: {x: 10.773848, y: 0, z: -10.134142}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 44
+  m_LocalEulerAnglesHint: {x: 0, y: -205.294, z: 0}
+--- !u!1 &7644531206310185624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206310185625}
+  m_Layer: 12
+  m_Name: Fire Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206310185625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206310185624}
+  m_LocalRotation: {x: -0, y: -0.07238317, z: -0, w: 0.997377}
+  m_LocalPosition: {x: -3.3810003, y: 0, z: 11.499994}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: -8.302, z: 0}
+--- !u!1 &7644531206392628078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206392628079}
+  m_Layer: 12
+  m_Name: Fire point (39)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206392628079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206392628078}
+  m_LocalRotation: {x: -0, y: -0.7537428, z: -0, w: 0.6571696}
+  m_LocalPosition: {x: -13.21932, y: 0, z: -6.7693777}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 65
+  m_LocalEulerAnglesHint: {x: 0, y: -97.831, z: 0}
+--- !u!1 &7644531206412452777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206412452758}
+  m_Layer: 12
+  m_Name: Fire point (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206412452758
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206412452777}
+  m_LocalRotation: {x: -0, y: -0.3252655, z: -0, w: 0.94562274}
+  m_LocalPosition: {x: -11.476985, y: 0, z: 11.499994}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: -37.963, z: 0}
+--- !u!1 &7644531206415380011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206415380008}
+  m_Layer: 12
+  m_Name: Fire point (36)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206415380008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206415380011}
+  m_LocalRotation: {x: -0, y: -0.068288006, z: -0, w: 0.9976657}
+  m_LocalPosition: {x: -6.490174, y: 0, z: 12.621016}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 62
+  m_LocalEulerAnglesHint: {x: 0, y: -7.831, z: 0}
+--- !u!1 &7644531206446095362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206446095363}
+  m_Layer: 12
+  m_Name: Fire point (46)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206446095363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206446095362}
+  m_LocalRotation: {x: -0, y: -0.503925, z: -0, w: -0.8637474}
+  m_LocalPosition: {x: 13.470902, y: 0, z: 10.34134}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 72
+  m_LocalEulerAnglesHint: {x: 0, y: -299.48, z: 0}
+--- !u!1 &7644531206473034880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206473034881}
+  m_Layer: 12
+  m_Name: Fire point (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206473034881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206473034880}
+  m_LocalRotation: {x: -0, y: -0.14189193, z: -0, w: 0.9898822}
+  m_LocalPosition: {x: -8.256999, y: 0, z: 11.499994}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: -16.315, z: 0}
+--- !u!1 &7644531206492110878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206492110879}
+  m_Layer: 12
+  m_Name: Fire point (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206492110879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206492110878}
+  m_LocalRotation: {x: -0, y: -0.8002851, z: -0, w: 0.5996197}
+  m_LocalPosition: {x: -12.052001, y: 0, z: -8.670991}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: -106.315, z: 0}
+--- !u!1 &7644531206533517735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206533517732}
+  m_Layer: 12
+  m_Name: Fire Point (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206533517732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206533517735}
+  m_LocalRotation: {x: -0, y: -0.9969081, z: -0, w: 0.07857649}
+  m_LocalPosition: {x: -3.403978, y: 0, z: -11.499972}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: -170.987, z: 0}
+--- !u!1 &7644531206542056150
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206542056151}
+  m_Layer: 12
+  m_Name: Fire Point (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206542056151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206542056150}
+  m_LocalRotation: {x: -0, y: 0.07943008, z: -0, w: 0.9968405}
+  m_LocalPosition: {x: 4.5539985, y: 0, z: 11.499994}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 9.112, z: 0}
+--- !u!1 &7644531206556052359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206556052356}
+  m_Layer: 12
+  m_Name: Fire point (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206556052356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206556052359}
+  m_LocalRotation: {x: -0, y: -0.32124287, z: -0, w: 0.94699687}
+  m_LocalPosition: {x: -11.637999, y: 0, z: 8.2109995}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: -37.476, z: 0}
+--- !u!1 &7644531206613716216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206613716217}
+  m_Layer: 12
+  m_Name: Fire point (38)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206613716217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206613716216}
+  m_LocalRotation: {x: -0, y: -0.2503196, z: -0, w: 0.96816325}
+  m_LocalPosition: {x: -10.319367, y: 0, z: 9.866788}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 64
+  m_LocalEulerAnglesHint: {x: 0, y: -28.993, z: 0}
+--- !u!1 &7644531206622910795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206622910792}
+  m_Layer: 12
+  m_Name: Fire point (22)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206622910792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206622910795}
+  m_LocalRotation: {x: -0, y: -0.39438936, z: -0, w: 0.91894346}
+  m_LocalPosition: {x: -12.751335, y: 0, z: 6.2669907}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 40
+  m_LocalEulerAnglesHint: {x: 0, y: -46.456, z: 0}
+--- !u!1 &7644531206623462671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206623462668}
+  m_Layer: 12
+  m_Name: Fire point (12)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206623462668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206623462671}
+  m_LocalRotation: {x: -0, y: -0.94699687, z: -0, w: -0.3212429}
+  m_LocalPosition: {x: 12.419989, y: 0, z: -8.372006}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: -217.476, z: 0}
+--- !u!1 &7644531206663903002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206663903003}
+  m_Layer: 12
+  m_Name: Fire point (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206663903003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206663903002}
+  m_LocalRotation: {x: -0, y: -0.8967809, z: -0, w: 0.4424749}
+  m_LocalPosition: {x: -8.7630005, y: 0, z: -12.052}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: -127.476, z: 0}
+--- !u!1 &7644531206680167396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206680167397}
+  m_Layer: 12
+  m_Name: Fire point (16)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206680167397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206680167396}
+  m_LocalRotation: {x: -0, y: -0.07828124, z: -0, w: 0.9969313}
+  m_LocalPosition: {x: -1.7693443, y: 0, z: 11.33214}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: -8.98, z: 0}
+--- !u!1 &7644531206686339841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206686339854}
+  m_Layer: 12
+  m_Name: Fire Point (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206686339854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206686339841}
+  m_LocalRotation: {x: -0, y: -0.6903017, z: -0, w: 0.7235217}
+  m_LocalPosition: {x: -11.956914, y: 0, z: 2.271021}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: -87.308, z: 0}
+--- !u!1 &7644531206737879260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206737879261}
+  m_Layer: 12
+  m_Name: Fire point (15)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206737879261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206737879260}
+  m_LocalRotation: {x: -0, y: -0.4424749, z: -0, w: -0.8967809}
+  m_LocalPosition: {x: 8.533, y: 0, z: 12.351}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: -307.476, z: 0}
+--- !u!1 &7644531206782327072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206782327073}
+  m_Layer: 12
+  m_Name: Fire point (23)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206782327073
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206782327072}
+  m_LocalRotation: {x: -0, y: -0.8447681, z: -0, w: 0.5351325}
+  m_LocalPosition: {x: -10.525296, y: 0, z: -10.472672}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 41
+  m_LocalEulerAnglesHint: {x: 0, y: -115.294, z: 0}
+--- !u!1 &7644531206835034970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206835034971}
+  m_Layer: 12
+  m_Name: Fire point (30)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206835034971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206835034970}
+  m_LocalRotation: {x: -0, y: -0.366965, z: -0, w: -0.9302348}
+  m_LocalPosition: {x: 9.800065, y: 0, z: 13.858858}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 48
+  m_LocalEulerAnglesHint: {x: 0, y: -316.943, z: 0}
+--- !u!1 &7644531206868116963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206868116960}
+  m_Layer: 12
+  m_Name: Fire point (45)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206868116960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206868116963}
+  m_LocalRotation: {x: -0, y: -0.6571696, z: -0, w: -0.7537428}
+  m_LocalPosition: {x: 12.995903, y: 0, z: 7.1566033}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 71
+  m_LocalEulerAnglesHint: {x: 0, y: -277.831, z: 0}
+--- !u!1 &7644531206893779451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206893779448}
+  m_Layer: 12
+  m_Name: Fire point (17)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206893779448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206893779451}
+  m_LocalRotation: {x: -0, y: -0.76029027, z: -0, w: 0.6495836}
+  m_LocalPosition: {x: -11.2461, y: 0, z: -2.2271514}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: -98.98, z: 0}
+--- !u!1 &7644531206946185236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206946185237}
+  m_Layer: 12
+  m_Name: Fire point (35)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206946185237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206946185236}
+  m_LocalRotation: {x: -0, y: -0.7574703, z: -0, w: -0.65286964}
+  m_LocalPosition: {x: 11.5207615, y: 0, z: -1.0182116}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 59
+  m_LocalEulerAnglesHint: {x: 0, y: -261.517, z: 0}
+--- !u!1 &7644531206961646376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206961646377}
+  m_Layer: 12
+  m_Name: Fire point (37)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206961646377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206961646376}
+  m_LocalRotation: {x: -0, y: -0.2544329, z: -0, w: 0.9670905}
+  m_LocalPosition: {x: -9.674914, y: 0, z: 13.096039}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 63
+  m_LocalEulerAnglesHint: {x: 0, y: -29.48, z: 0}
+--- !u!1 &7644531206964806432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206964806433}
+  m_Layer: 12
+  m_Name: Fire point (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206964806433
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206964806432}
+  m_LocalRotation: {x: -0, y: -0.98988223, z: -0, w: -0.14189182}
+  m_LocalPosition: {x: 9.038986, y: 0, z: -11.661015}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: -196.315, z: 0}
+--- !u!1 &7644531206974064857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206974064838}
+  m_Layer: 12
+  m_Name: Fire Point (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206974064838
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206974064857}
+  m_LocalRotation: {x: -0, y: -0.7589398, z: -0, w: 0.6511608}
+  m_LocalPosition: {x: -11.477024, y: 0, z: -3.7949715}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: -98.742, z: 0}
+--- !u!1 &7644531206997674186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531206997674187}
+  m_Layer: 12
+  m_Name: Fire point (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531206997674187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531206997674186}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000013411044}
+  m_LocalPosition: {x: 1.15, y: 0, z: -11.5}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!1 &7644531207048500398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531207048500399}
+  m_Layer: 12
+  m_Name: Fire Point (15)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531207048500399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531207048500398}
+  m_LocalRotation: {x: -0, y: -0.69720274, z: -0, w: -0.716874}
+  m_LocalPosition: {x: 12.059503, y: 0, z: -2.0605264}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 37
+  m_LocalEulerAnglesHint: {x: 0, y: -271.594, z: 0}
+--- !u!1 &7644531207086102462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531207086102463}
+  m_Layer: 12
+  m_Name: Fire Point (13)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531207086102463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531207086102462}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00029620368}
+  m_LocalPosition: {x: -1.5417441, y: 0, z: -11.917189}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: -179.966, z: 0}
+--- !u!1 &7644531207213211457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531207213211470}
+  m_Layer: 12
+  m_Name: Fire point (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531207213211470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531207213211457}
+  m_LocalRotation: {x: -0, y: -0.7071069, z: -0, w: -0.7071067}
+  m_LocalPosition: {x: 11.569, y: 0, z: 0.667}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: -270, z: 0}
+--- !u!1 &7644531207218307073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531207218307086}
+  m_Layer: 12
+  m_Name: Fire point (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531207218307086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531207218307073}
+  m_LocalRotation: {x: -0, y: -0.89865375, z: -0, w: 0.43865886}
+  m_LocalPosition: {x: -12.051994, y: 0, z: -11.890974}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: -127.963, z: 0}
+--- !u!1 &7644531207226865267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531207226865264}
+  m_Layer: 12
+  m_Name: Fire Point (17)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531207226865264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531207226865267}
+  m_LocalRotation: {x: -0, y: 0.15294246, z: -0, w: 0.9882351}
+  m_LocalPosition: {x: 6.1806445, y: 0, z: 10.731102}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 52
+  m_LocalEulerAnglesHint: {x: 0, y: 17.595, z: 0}
+--- !u!1 &7644531207244768507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531207244768504}
+  m_Layer: 12
+  m_Name: Fire point (41)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531207244768504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531207244768507}
+  m_LocalRotation: {x: -0, y: -0.86159736, z: -0, w: 0.5075924}
+  m_LocalPosition: {x: -10.465086, y: 0, z: -10.598587}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 67
+  m_LocalEulerAnglesHint: {x: 0, y: -118.993, z: 0}
+--- !u!1 &7644531207255354220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531207255354221}
+  m_Layer: 12
+  m_Name: Fire point (47)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531207255354221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531207255354220}
+  m_LocalRotation: {x: -0, y: -0.5075924, z: -0, w: -0.86159736}
+  m_LocalPosition: {x: 10.241639, y: 0, z: 10.985804}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 73
+  m_LocalEulerAnglesHint: {x: 0, y: -298.993, z: 0}
+--- !u!1 &7644531207301405056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531207301405057}
+  m_Layer: 12
+  m_Name: Fire point (14)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531207301405057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531207301405056}
+  m_LocalRotation: {x: -0, y: -0.43865886, z: -0, w: -0.89865375}
+  m_LocalPosition: {x: 11.821996, y: 0, z: 12.189978}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: -307.963, z: 0}
+--- !u!1 &7644531207308000355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531207308000352}
+  m_Layer: 12
+  m_Name: Fire point (19)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531207308000352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531207308000355}
+  m_LocalRotation: {x: -0, y: -0.6495837, z: -0, w: -0.7602901}
+  m_LocalPosition: {x: 11.348695, y: 0, z: 2.4376402}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 35
+  m_LocalEulerAnglesHint: {x: 0, y: -278.98, z: 0}
+--- !u!1 &7644531207333211710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531207333211711}
+  m_Layer: 12
+  m_Name: Fire point (40)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531207333211711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531207333211710}
+  m_LocalRotation: {x: -0, y: -0.8637474, z: -0, w: 0.503925}
+  m_LocalPosition: {x: -13.694334, y: 0, z: -9.954121}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 66
+  m_LocalEulerAnglesHint: {x: 0, y: -119.48, z: 0}
+--- !u!1 &7644531207336789291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531207336789288}
+  m_Layer: 12
+  m_Name: Fire Point (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531207336789288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531207336789291}
+  m_LocalRotation: {x: -0, y: -0.64935213, z: -0, w: -0.760488}
+  m_LocalPosition: {x: 11.5690365, y: 0, z: 4.047967}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: -279.014, z: 0}
+--- !u!1 &7644531207367599056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531207367599057}
+  m_Layer: 12
+  m_Name: Fire point (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531207367599057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531207367599056}
+  m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -11.477, y: 0, z: -0.41399997}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &7644531207392280387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531207392280384}
+  m_Layer: 12
+  m_Name: Fire point (32)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531207392280384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531207392280387}
+  m_LocalRotation: {x: -0, y: 0.07396365, z: -0, w: 0.9972609}
+  m_LocalPosition: {x: 1.6764659, y: 0, z: 11.402929}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 50
+  m_LocalEulerAnglesHint: {x: 0, y: 8.483, z: 0}
+--- !u!1 &7644531207394806508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644531207394806509}
+  m_Layer: 12
+  m_Name: Fire point (28)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644531207394806509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644531207394806508}
+  m_LocalRotation: {x: -0, y: -0.9189434, z: -0, w: -0.39438945}
+  m_LocalPosition: {x: 13.600067, y: 0, z: -6.357744}
+  m_LocalScale: {x: 23, y: 7, z: 23}
+  m_Children: []
+  m_Father: {fileID: 641258010313264673}
+  m_RootOrder: 46
+  m_LocalEulerAnglesHint: {x: 0, y: -226.456, z: 0}
+--- !u!1001 &1111419056120261066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5695849288901393935}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: -5329304718501628062, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -5329304718501628062, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -5329304718501628062, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -2577548232221058511, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -2577548232221058511, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -2577548232221058511, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_Name
+      value: Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202271454713460447, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+--- !u!1 &4455650093972776906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+  m_PrefabInstance: {fileID: 1111419056120261066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &641258010313264673 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+  m_PrefabInstance: {fileID: 1111419056120261066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1372702665539504295
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4455650093972776906}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: be37464d5c710f04c8379753ac9154c5, type: 3}
+--- !u!1001 &8789921006489313762
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5695849288901393935}
+    m_Modifications:
+    - target: {fileID: 2629717633943681119, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629717633943681119, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629717633943681119, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629717633943681119, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629717633943681119, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629717633943681119, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629717633943681119, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629717633943681119, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629717633943681119, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629717633943681119, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629717633943681119, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629717633943681119, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629717633943681119, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629717633943681119, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2793947498083927094, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: m_Name
+      value: Enemy Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396849779951083867, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396849779951083867, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: shieldRadius
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396849779951083867, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: shieldRechargeRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396849779951083867, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+      propertyPath: shieldRechargeDelay
+      value: 20
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+--- !u!4 &6738142420522834365 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2629717633943681119, guid: ad487d6bf17223a49850521fc0d4f633, type: 3}
+  m_PrefabInstance: {fileID: 8789921006489313762}
+  m_PrefabAsset: {fileID: 0}

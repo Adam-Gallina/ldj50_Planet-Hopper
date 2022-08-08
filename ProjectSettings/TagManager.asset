@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -11,6 +12,12 @@ TagManager:
   - 
   - Water
   - UI
+  - Laser
+  - Enemy
+  - Mothership
+  - Resource
+  - Shield
+  - Player
   - 
   - 
   - 
@@ -29,14 +36,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Environment
+  - Ground
   m_SortingLayers:
   - name: Default
     uniqueID: 0
