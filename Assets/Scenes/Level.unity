@@ -152,7 +152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28239076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.328}
+  m_LocalPosition: {x: 0, y: 0, z: 0.578}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 658008472}
@@ -214,7 +214,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &205109025 stripped
 Transform:
@@ -230,6 +230,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -576454975828473792, guid: 7ef48dfd1340f8e4e91184183da85dbb, type: 3}
       propertyPath: shieldRadius
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -576454975828473792, guid: 7ef48dfd1340f8e4e91184183da85dbb, type: 3}
+      propertyPath: useParentTag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -576454975828473792, guid: 7ef48dfd1340f8e4e91184183da85dbb, type: 3}
+      propertyPath: shieldHitRadius
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4615623291830838512, guid: 7ef48dfd1340f8e4e91184183da85dbb, type: 3}
@@ -291,6 +299,10 @@ PrefabInstance:
     - target: {fileID: 4806826100345919641, guid: 7ef48dfd1340f8e4e91184183da85dbb, type: 3}
       propertyPath: m_Name
       value: Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806826100345919641, guid: 7ef48dfd1340f8e4e91184183da85dbb, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ef48dfd1340f8e4e91184183da85dbb, type: 3}
@@ -1816,6 +1828,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 962515415537647103, guid: 2f95c64b5a34bb144848e27666d21b9a, type: 3}
+      propertyPath: shieldHitRadius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030379948856864038, guid: 2f95c64b5a34bb144848e27666d21b9a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5695849288901393922, guid: 2f95c64b5a34bb144848e27666d21b9a, type: 3}
       propertyPath: m_Name
       value: Mothership
@@ -2118,7 +2138,7 @@ PrefabInstance:
       objectReference: {fileID: 1265984967}
     - target: {fileID: 5695849288901393935, guid: 2f95c64b5a34bb144848e27666d21b9a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5695849288901393935, guid: 2f95c64b5a34bb144848e27666d21b9a, type: 3}
       propertyPath: m_LocalPosition.x

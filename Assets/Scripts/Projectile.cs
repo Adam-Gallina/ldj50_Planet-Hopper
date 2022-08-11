@@ -21,11 +21,11 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == targetTag
-            || other.gameObject.layer == Constants.ShieldLayer)
+        Debug.Log(other.name + " " + other.tag);
+        if (other.CompareTag(targetTag))
         {
             HealthBase hit = other.GetComponentInParent<HealthBase>();
-            if (hit && hit.Damage(source, damage))
+            if (hit && hit.Damage(gameObject, damage))
                 Despawn();
         }
         else if (other.gameObject.layer == Constants.EnvironmentLayer ||

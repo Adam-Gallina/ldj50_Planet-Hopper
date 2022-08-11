@@ -5,11 +5,13 @@ using UnityEngine;
 public class Shield : HealthBase
 {
     [Header("Shield")]
+    [SerializeField] protected bool useParentTag = true;
     public float shieldRechargeRate;
     public float shieldRechargeDelay;
     protected float lastHit;
     protected bool rechargingShield;
     [SerializeField] protected float shieldRadius;
+    [SerializeField] protected float shieldHitRadius;
 
     [Header("Shield Anim")]
     [SerializeField] private float flickerTime;
@@ -19,7 +21,6 @@ public class Shield : HealthBase
     private float nextFlicker;
     [SerializeField] private int flickerCount;
     private bool flickering = false;
-    private string targetTag = "none";
 
     private Renderer r;
     protected SphereCollider coll;
@@ -27,6 +28,13 @@ public class Shield : HealthBase
     private void OnValidate()
     {
         transform.localScale = new Vector3(shieldRadius, shieldRadius, shieldRadius) * 2;
+        if (useParentTag && transform.parent)
+            gameObject.tag = transform.parent.tag;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, shieldRadius - shieldHitRadius);
     }
 
     private void Awake()
@@ -37,13 +45,6 @@ public class Shield : HealthBase
         nextFlicker = Time.time + Random.Range(minTimeToFlicker, maxTimeToFlicker);
 
         coll = GetComponent<SphereCollider>();
-    }
-
-    protected override void Start()
-    {
-        base.Start();
-
-        targetTag = transform.GetComponentInParent<CombatBase>() ? transform.GetComponentInParent<CombatBase>().targetTag : "none";
     }
 
     protected virtual void Update()
@@ -102,23 +103,24 @@ public class Shield : HealthBase
 
     public override bool Damage(GameObject source, float damage)
     {
-        if (targetTag == "none" || source.CompareTag(targetTag))
+        Debug.Log($"Hit by {source.name}, {Vector3.Distance(transform.position, source.transform.position)} / {shieldRadius} ({shieldRadius - shieldHitRadius})");
+        
+        //if (Vector3.Distance(transform.position, source.GetComponent<Collider>().ClosestPoint(transform.position)) < shieldRadius - shieldHitRadius)
+        if (Vector3.Distance(transform.position, source.transform.position) < shieldRadius - shieldHitRadius)
+            return false;
+
+        lastHit = Time.time;
+        Flicker();
+
+        currHealth -= damage;
+        if (currHealth <= 0)
         {
-            lastHit = Time.time;
-            Flicker();
-
-            currHealth -= damage;
-            if (currHealth <= 0)
-            {
-                currHealth = 0;
-                rechargingShield = true;
-                coll.enabled = false;
-            }
-
-            return true;
+            currHealth = 0;
+            rechargingShield = true;
+            coll.enabled = false;
         }
 
-        return false;
+        return true;
     }
 }
 

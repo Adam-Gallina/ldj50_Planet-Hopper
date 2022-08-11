@@ -19,6 +19,7 @@ public class LevelController : MonoBehaviour
         PlayerController.Instance.transform.position = Vector3.zero;
         CameraController.Instance.SetTarget(PlayerController.Instance.transform);
 
-        EnemySpawner.Instance.canSpawn = true;
+        if (EnemySpawner.Instance)
+            EnemySpawner.Instance.canSpawn = true;
     }
 }

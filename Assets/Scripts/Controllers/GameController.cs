@@ -31,6 +31,7 @@ public class GameController : MonoBehaviour
         Physics.IgnoreLayerCollision(Constants.EnvironmentLayer, Constants.ShieldLayer);
         Physics.IgnoreLayerCollision(Constants.EnemyLayer, Constants.ShieldLayer);
         Physics.IgnoreLayerCollision(Constants.PlayerLayer, Constants.ShieldLayer);
+        Physics.IgnoreLayerCollision(Constants.ShieldLayer, Constants.ShieldLayer);
         Physics.IgnoreLayerCollision(Constants.MothershipLayer, Constants.EnvironmentLayer);
 
         if (SceneManager.GetActiveScene().buildIndex == Constants.LevelScene)
