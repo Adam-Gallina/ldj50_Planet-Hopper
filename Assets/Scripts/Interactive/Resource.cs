@@ -10,7 +10,7 @@ public class Resource : HealthBase
 
     protected override void Death(GameObject source)
     {
-        PlayerController.Instance.AddResource(resourceType, resourceValue);
+        PlayerController.Instance.manager.AddResource(resourceType, resourceValue);
 
         Stats.Instance.resourcesCollected++;
 

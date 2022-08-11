@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum UpgradeType { damage, miningSpeed, shipSpeed, shield }
-public enum RepairType { drill, drive, shield }
 [RequireComponent(typeof(InputController))]
+[RequireComponent(typeof(PlayerManager))]
 public class PlayerController : CombatBase
 {
     public static PlayerController Instance;
+    [HideInInspector] public PlayerManager manager;
 
     [Header("Resource Collection")]
     [SerializeField] private LineRenderer resourceIndicator;
@@ -19,38 +19,11 @@ public class PlayerController : CombatBase
     [SerializeField] private float baseMiningStrength = 1;
     [SerializeField] private Color closeColor;
     [SerializeField] private Color farColor;
-    public Dictionary<ResourceType, int> inventory = new Dictionary<ResourceType, int>();
 
     [Header("Warping")]
     public int uraniumPerWarp;
 
-    [Header("Upgrades")]
-    [SerializeField] private int maxUpgrade;
-    public int upgradeCost;
-    [SerializeField] private int upgradeCostMod;
-    [SerializeField] private float damageMod;
-    [SerializeField] private float miningSpeedMod;
-    [SerializeField] private float shipSpeedMod;
-    [SerializeField] private float shieldHealthMod;
-    [SerializeField] private float shieldRateMod;
-    public Dictionary<UpgradeType, int> upgrades = new Dictionary<UpgradeType, int>();
-
-    [Header("Repairs")]
-    public int maxRepair = 3;
-    [HideInInspector] public int drillLevel;
-    [SerializeField] private float miningPenalty;
-    [HideInInspector] public int driveLevel;
-    public int drivePenalty;
-    [HideInInspector] public int shieldLevel;
-    [SerializeField] private float shieldPenalty;
-
-    // Adam is lazy
-    private float baseShieldDelay;
-    private float baseShieldRate;
-    private float baseShieldHealth;
-
     private InputController inp;
-    [HideInInspector] public Shield shield;
 
     protected override void Awake()
     {
@@ -65,35 +38,10 @@ public class PlayerController : CombatBase
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        inventory.Add(ResourceType.Metal, 0);
-        inventory.Add(ResourceType.Electronics, 0);
-        inventory.Add(ResourceType.Uranium, 0);
-
-        upgrades.Add(UpgradeType.damage, 0);
-        upgrades.Add(UpgradeType.miningSpeed, 0);
-        upgrades.Add(UpgradeType.shipSpeed, 0);
-        upgrades.Add(UpgradeType.shield, 0);
-
         targetTag = Constants.EnemyTag;
 
-        drillLevel = maxRepair;
-        driveLevel = maxRepair;
-        shieldLevel = maxRepair;
-
         inp = GetComponent<InputController>();
-    }
-
-    protected override void Start()
-    {
-        base.Start();
-
-        shield = GetComponentInChildren<Shield>();
-        if (shield)
-        {
-            baseShieldDelay = shield.shieldRechargeDelay;
-            baseShieldHealth = shield.maxHealth;
-            baseShieldRate = shield.shieldRechargeRate;
-        }
+        manager = GetComponent<PlayerManager>();
     }
 
     private void Update()
@@ -107,14 +55,6 @@ public class PlayerController : CombatBase
 
         CheckMining();
 
-        if (shield)
-        {
-            shield.maxHealth = baseShieldHealth + upgrades[UpgradeType.shield] * shieldHealthMod;
-            shield.shieldRechargeRate = baseShieldRate + upgrades[UpgradeType.shield] * shieldRateMod;
-            shield.shieldRechargeDelay = baseShieldDelay + (maxRepair - shieldLevel) * shieldPenalty;
-            if (shieldLevel <= 0)
-                shield.shieldRechargeDelay = -1;
-        }
     }
 
     protected override void HandleMovement()
@@ -131,7 +71,7 @@ public class PlayerController : CombatBase
         if (inp.down)
             y -= 1;
 
-        AddForce(new Vector3(x, 0, y), (moveSpeed + upgrades[UpgradeType.shipSpeed] * shipSpeedMod));
+        AddForce(new Vector3(x, 0, y), (moveSpeed + manager.SpeedMod));
     }
 
     private void HandleCombat()
@@ -152,7 +92,7 @@ public class PlayerController : CombatBase
 
         SetResourceIndicator(target?.transform);
 
-        if (inp.interact.down && drillLevel > 0)
+        if (inp.interact.down && manager.miningLevel > 0)
         {
             targetResource = target;
             LevelUI.Instance.SetMiningIndicator(target);
@@ -176,8 +116,8 @@ public class PlayerController : CombatBase
 
         if (Time.time > nextMine)
         {
-            nextMine = Time.time + miningSpeed + (maxRepair - drillLevel) * miningPenalty;
-            targetResource.Damage(gameObject, baseMiningStrength + upgrades[UpgradeType.miningSpeed] * miningSpeedMod);
+            nextMine = Time.time + miningSpeed + manager.MiningPenalty;
+            targetResource.Damage(gameObject, baseMiningStrength + manager.MiningSpeedMod);
         }
     }
 
@@ -218,85 +158,20 @@ public class PlayerController : CombatBase
 
     #endregion
     
-    #region Upgrades
-    public bool UpgradeShip(UpgradeType upgrade)
-    {
-        if (inventory[ResourceType.Electronics] < upgradeCost)
-            return false;
-
-        if (upgrades[upgrade] == maxUpgrade)
-            return false;
-
-        upgrades[upgrade]++;
-
-        inventory[ResourceType.Electronics] -= upgradeCost;
-        upgradeCost += upgradeCostMod;
-
-        return true;
-    }
-    #endregion
-
-    #region Repairs
-    public void CheckForBreak()
-    {
-        int RandomBreak() { return Random.Range(0, 1000) < 300 + 700 * (-Mathf.Pow(GameController.Instance.completedLevels, 0.2f) + 1.99f) ? 0 : 1; }
-
-        if (drillLevel > 0)
-            drillLevel -= RandomBreak();
-        if (driveLevel > 0)
-            driveLevel -= RandomBreak();
-        if (shieldLevel > 0)
-            shieldLevel -= RandomBreak();
-    }
-
-    public bool RepairShip(RepairType repair)
-    {
-        if (inventory[ResourceType.Metal] < 5)
-            return false;
-
-        switch (repair)
-        {
-            case RepairType.drill:
-                if (drillLevel >= maxRepair)
-                    return false;
-                drillLevel += 1;
-                break;
-            case RepairType.drive:
-                if (driveLevel >= maxRepair)
-                    return false;
-                driveLevel += 1;
-                break;
-            case RepairType.shield:
-                if (shieldLevel >= maxRepair)
-                    return false;
-                shieldLevel += 1;
-                break;
-        }
-
-        inventory[ResourceType.Metal] -= 5;
-
-        return true;
-    }
-    #endregion
-    
-    public void AddResource(ResourceType resource, int amount)
-    {
-        inventory[resource] += amount;
-    }
 
     public bool CheckWarp(bool doWarp)
     {
-        if (inventory[ResourceType.Uranium] < uraniumPerWarp + (maxRepair - driveLevel) * drivePenalty || driveLevel <= 0)
+        if (manager.inventory[ResourceType.Uranium] < uraniumPerWarp + manager.DrivePenalty || manager.driveLevel <= 0)
             return false;
 
         if (doWarp)
-            inventory[ResourceType.Uranium] -= uraniumPerWarp + (maxRepair - driveLevel) * drivePenalty;
+            manager.inventory[ResourceType.Uranium] -= uraniumPerWarp + manager.DrivePenalty;
         return true;
     }
 
     protected override void InitBullet(Projectile bullet)
     {
-        bullet.Initialize(gameObject, bulletSpeed, bulletDamage + upgrades[UpgradeType.damage] * damageMod, targetTag);
+        bullet.Initialize(gameObject, bulletSpeed, bulletDamage + manager.DamageMod, targetTag);
     }
 
     protected override void Death(GameObject source)

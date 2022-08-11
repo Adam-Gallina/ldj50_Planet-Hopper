@@ -21,7 +21,6 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name + " " + other.tag);
         if (other.CompareTag(targetTag))
         {
             HealthBase hit = other.GetComponentInParent<HealthBase>();

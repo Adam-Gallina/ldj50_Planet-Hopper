@@ -68,24 +68,24 @@ public class LevelUI : MonoBehaviour
 
     private void Update()
     {
-        SetInventory(PlayerController.Instance.inventory[ResourceType.Metal],
-                     PlayerController.Instance.inventory[ResourceType.Electronics],
-                     PlayerController.Instance.inventory[ResourceType.Uranium]);
+        SetInventory(PlayerController.Instance.manager.inventory[ResourceType.Metal],
+                     PlayerController.Instance.manager.inventory[ResourceType.Electronics],
+                     PlayerController.Instance.manager.inventory[ResourceType.Uranium]);
 
-        SetUpgrades(PlayerController.Instance.upgradeCost,
-                    PlayerController.Instance.upgrades[UpgradeType.damage],
-                    PlayerController.Instance.upgrades[UpgradeType.miningSpeed],
-                    PlayerController.Instance.upgrades[UpgradeType.shipSpeed],
-                    PlayerController.Instance.upgrades[UpgradeType.shield]);
+        SetUpgrades(PlayerController.Instance.manager.upgradeCost,
+                    PlayerController.Instance.manager.upgrades[UpgradeType.damage],
+                    PlayerController.Instance.manager.upgrades[UpgradeType.miningSpeed],
+                    PlayerController.Instance.manager.upgrades[UpgradeType.shipSpeed],
+                    PlayerController.Instance.manager.upgrades[UpgradeType.shield]);
 
-        SetRepairs(PlayerController.Instance.drillLevel,
-                   PlayerController.Instance.driveLevel,
-                   PlayerController.Instance.shieldLevel);
+        SetRepairs(PlayerController.Instance.manager.miningLevel,
+                   PlayerController.Instance.manager.driveLevel,
+                   PlayerController.Instance.manager.shieldLevel);
 
         SetHealth(PlayerController.Instance.currHealth / PlayerController.Instance.maxHealth,
-                  PlayerController.Instance.shield.currHealth / PlayerController.Instance.shield.maxHealth);
+                  PlayerController.Instance.GetComponentInChildren<PlayerShield>().currHealth / PlayerController.Instance.GetComponentInChildren<PlayerShield>().maxHealth);
 
-        SetWarp((float)PlayerController.Instance.inventory[ResourceType.Uranium] / (PlayerController.Instance.uraniumPerWarp + (PlayerController.Instance.maxRepair - PlayerController.Instance.driveLevel) * PlayerController.Instance.drivePenalty),
+        SetWarp((float)PlayerController.Instance.manager.inventory[ResourceType.Uranium] / (PlayerController.Instance.uraniumPerWarp + (PlayerController.Instance.manager.DrivePenalty)),
                 PlayerController.Instance.CheckWarp(false));
 
         SetTimer(Mothership.Instance.elapsedTime / Mothership.Instance.totalTime);
@@ -160,12 +160,12 @@ public class LevelUI : MonoBehaviour
 
     public void UpgradeShip(int upgrade)
     {
-        PlayerController.Instance.UpgradeShip((UpgradeType)upgrade);
+        PlayerController.Instance.manager.UpgradeShip((UpgradeType)upgrade);
     }
 
     public void RepairShip(int repair)
     {
-        PlayerController.Instance.RepairShip((RepairType)repair);
+        PlayerController.Instance.manager.RepairShip((RepairType)repair);
     }
 
     public void WarpPlayer()

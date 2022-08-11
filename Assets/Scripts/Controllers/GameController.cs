@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
         Stats.Instance.planetsVisited++;
 
         Mothership.Instance?.OnNextLevel();
-        PlayerController.Instance?.CheckForBreak();
+        PlayerController.Instance?.manager.CheckForBreak();
     }
 
     public void Restart()

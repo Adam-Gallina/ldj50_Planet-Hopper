@@ -8,25 +8,25 @@ public class DebugTools : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            PlayerController.Instance.AddResource(ResourceType.Metal, 1);
+            PlayerController.Instance.manager.AddResource(ResourceType.Metal, 1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            PlayerController.Instance.AddResource(ResourceType.Electronics, 1);
+            PlayerController.Instance.manager.AddResource(ResourceType.Electronics, 1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            PlayerController.Instance.AddResource(ResourceType.Uranium, 1);
+            PlayerController.Instance.manager.AddResource(ResourceType.Uranium, 1);
         }
 
         if (Input.GetKeyDown(KeyCode.U))
-            PlayerController.Instance.upgrades[UpgradeType.damage] -= 1;
+            PlayerController.Instance.manager.upgrades[UpgradeType.damage] -= 1;
         if (Input.GetKeyDown(KeyCode.I))
-            PlayerController.Instance.upgrades[UpgradeType.miningSpeed] -= 1;
+            PlayerController.Instance.manager.upgrades[UpgradeType.miningSpeed] -= 1;
         if (Input.GetKeyDown(KeyCode.O))
-            PlayerController.Instance.upgrades[UpgradeType.shield] -= 1;
+            PlayerController.Instance.manager.upgrades[UpgradeType.shield] -= 1;
         if (Input.GetKeyDown(KeyCode.P))
-            PlayerController.Instance.upgrades[UpgradeType.shipSpeed] -= 1;
+            PlayerController.Instance.manager.upgrades[UpgradeType.shipSpeed] -= 1;
 
         if (Input.GetKeyDown(KeyCode.R))
             LevelGeneration.Instance.GenerateLevel();
@@ -43,10 +43,10 @@ public class DebugTools : MonoBehaviour
             Mothership.Instance.HideMothership();
 
         if (Input.GetKeyDown(KeyCode.Comma))
-            PlayerController.Instance.drillLevel += Input.GetKey(KeyCode.LeftShift) ? 1 : -1;
+            PlayerController.Instance.manager.miningLevel += Input.GetKey(KeyCode.LeftShift) ? 1 : -1;
         if (Input.GetKeyDown(KeyCode.Period))
-            PlayerController.Instance.driveLevel += Input.GetKey(KeyCode.LeftShift) ? 1 : -1;
+            PlayerController.Instance.manager.driveLevel += Input.GetKey(KeyCode.LeftShift) ? 1 : -1;
         if (Input.GetKeyDown(KeyCode.Slash))
-            PlayerController.Instance.shieldLevel += Input.GetKey(KeyCode.LeftShift) ? 1 : -1;
+            PlayerController.Instance.manager.shieldLevel += Input.GetKey(KeyCode.LeftShift) ? 1 : -1;
     }
 }
