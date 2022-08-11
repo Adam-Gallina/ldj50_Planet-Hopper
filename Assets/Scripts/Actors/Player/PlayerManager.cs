@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum UpgradeType { damage, miningSpeed, shipSpeed, shield }
+public enum UpgradeType { damage, miningSpeed, shipSpeed, shieldHealth, shieldRate }
 public enum RepairType { drill, drive, shield }
 public class PlayerManager : MonoBehaviour
 {
@@ -13,29 +13,19 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private int maxUpgrade;
     public int upgradeCost;
     [SerializeField] private int upgradeCostMod;
-    [SerializeField] private float damageMod;
-    [HideInInspector] public float DamageMod { get { return upgrades[UpgradeType.damage] * damageMod; } }
-    [SerializeField] private float miningSpeedMod;
-    [HideInInspector] public float MiningSpeedMod { get { return upgrades[UpgradeType.miningSpeed] * miningSpeedMod; } }
-    [SerializeField] private float shipSpeedMod;
-    [HideInInspector] public float SpeedMod { get { return upgrades[UpgradeType.shipSpeed] * shipSpeedMod; } }
-    [SerializeField] private float shieldHealthMod;
-    [HideInInspector] public float ShieldHealthMod { get { return upgrades[UpgradeType.shield] * shieldHealthMod; } }
-    [SerializeField] private float shieldRateMod;
-    [HideInInspector] public float ShieldRateMod { get { return upgrades[UpgradeType.shield] * shieldRateMod; } }
-    public Dictionary<UpgradeType, int> upgrades = new Dictionary<UpgradeType, int>();
+    public Upgrade damageMod;
+    public Upgrade miningSpeedMod;
+    public Upgrade shipSpeedMod;
+    public Upgrade shieldHealthMod;
+    public Upgrade shieldRateMod;
+    public Dictionary<UpgradeType, Upgrade> upgrades = new Dictionary<UpgradeType, Upgrade>();
 
     [Header("Repairs")]
     public int maxRepair = 3;
-    [HideInInspector] public int miningLevel;
-    [SerializeField] private float miningPenalty;
-    [HideInInspector] public float MiningPenalty { get { return (maxRepair - miningLevel) * miningPenalty; } }
-    [HideInInspector] public int driveLevel;
-    [SerializeField] private int drivePenalty;
-    [HideInInspector] public int DrivePenalty { get { return (maxRepair - driveLevel) * drivePenalty; } }
-    [HideInInspector] public int shieldLevel;
-    [SerializeField] private float shieldPenalty;
-    [HideInInspector] public float ShieldPenalty { get { return (maxRepair - shieldLevel) * shieldPenalty; } }
+    public Upgrade miningPenalty;
+    public Upgrade drivePenalty;
+    public Upgrade shieldPenalty;
+    public Dictionary<RepairType, Upgrade> repairs = new Dictionary<RepairType, Upgrade>();
 
     private void Awake()
     {
@@ -43,12 +33,15 @@ public class PlayerManager : MonoBehaviour
         inventory.Add(ResourceType.Electronics, 0);
         inventory.Add(ResourceType.Uranium, 0);
 
-        upgrades.Add(UpgradeType.damage, 0);
-        upgrades.Add(UpgradeType.miningSpeed, 0);
-        upgrades.Add(UpgradeType.shipSpeed, 0);
-        upgrades.Add(UpgradeType.shield, 0);
+        upgrades.Add(UpgradeType.damage, damageMod);
+        upgrades.Add(UpgradeType.miningSpeed, miningSpeedMod);
+        upgrades.Add(UpgradeType.shipSpeed, shipSpeedMod);
+        upgrades.Add(UpgradeType.shieldHealth, shieldHealthMod);
+        upgrades.Add(UpgradeType.shieldRate, shieldRateMod);
 
-        miningLevel = driveLevel = shieldLevel = maxRepair;
+        repairs.Add(RepairType.drill, miningPenalty);
+        repairs.Add(RepairType.drive, drivePenalty);
+        repairs.Add(RepairType.shield, shieldPenalty);
     }
 
     public void AddResource(ResourceType resource, int amount)
@@ -57,18 +50,21 @@ public class PlayerManager : MonoBehaviour
     }
 
     #region Upgrades
-    public bool UpgradeShip(UpgradeType upgrade)
+    public bool UpgradeShip(UpgradeType upgrade, bool ignoreCost=false)
     {
-        if (inventory[ResourceType.Electronics] < upgradeCost)
+        if (!ignoreCost && inventory[ResourceType.Electronics] < upgradeCost)
             return false;
 
-        if (upgrades[upgrade] == maxUpgrade)
+        if (upgrades[upgrade] >= maxUpgrade)
             return false;
 
-        upgrades[upgrade]++;
+        upgrades[upgrade].level++;
 
-        inventory[ResourceType.Electronics] -= upgradeCost;
-        upgradeCost += upgradeCostMod;
+        if (!ignoreCost)
+        {
+            inventory[ResourceType.Electronics] -= upgradeCost;
+            upgradeCost += upgradeCostMod;
+        }
 
         return true;
     }
@@ -79,12 +75,11 @@ public class PlayerManager : MonoBehaviour
     {
         int RandomBreak() { return Random.Range(0, 1000) < 300 + 700 * (-Mathf.Pow(GameController.Instance.completedLevels, 0.2f) + 1.99f) ? 0 : 1; }
 
-        if (miningLevel > 0)
-            miningLevel -= RandomBreak();
-        if (driveLevel > 0)
-            driveLevel -= RandomBreak();
-        if (shieldLevel > 0)
-            shieldLevel -= RandomBreak();
+        foreach (RepairType r in repairs.Keys)
+        {
+            if (repairs[r].level < maxRepair)
+                repairs[r].level += RandomBreak();
+        }
     }
 
     public bool RepairShip(RepairType repair)
@@ -92,37 +87,28 @@ public class PlayerManager : MonoBehaviour
         if (inventory[ResourceType.Metal] < 5)
             return false;
 
-        switch (repair)
-        {
-            case RepairType.drill:
-                if (miningLevel >= maxRepair)
-                    return false;
-                miningLevel += 1;
-                break;
-            case RepairType.drive:
-                if (driveLevel >= maxRepair)
-                    return false;
-                driveLevel += 1;
-                break;
-            case RepairType.shield:
-                if (shieldLevel >= maxRepair)
-                    return false;
-                shieldLevel += 1;
-                break;
-        }
+        if (repairs[repair].level <= 0)
+            return false;
+
+        repairs[repair].level -= 1;
 
         inventory[ResourceType.Metal] -= 5;
 
         return true;
     }
     #endregion
+}
 
-    //moveSpeed + upgrades[UpgradeType.shipSpeed] * shipSpeedMod);
 
-    //nextMine = Time.time + miningSpeed + (maxRepair - drillLevel) * miningPenalty;
-    //baseMiningStrength + upgrades[UpgradeType.miningSpeed] * miningSpeedMod;
+[System.Serializable]
+public class Upgrade
+{
+    [HideInInspector] public int level;
+    [SerializeField] protected float mod;
+    [HideInInspector] public virtual float Mod { get { return level * mod; } }
 
-    //inventory[ResourceType.Uranium] < uraniumPerWarp + (maxRepair - driveLevel) * drivePenalty
-
-    //bulletDamage + upgrades[UpgradeType.damage] * damageMod
+    public static implicit operator float(Upgrade obj)
+    {
+        return obj.Mod;
+    }
 }

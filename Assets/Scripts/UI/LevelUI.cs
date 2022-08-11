@@ -28,7 +28,7 @@ public class LevelUI : MonoBehaviour
     [SerializeField] private Text shieldRepair;
     [SerializeField] private Image shieldRepairBtn;
     [SerializeField] private Color[] btnColors;
-    private string[] repairLevelText = { "Broken", "Danger", "Warning", "Ok" };
+    private string[] repairLevelText = { "Ok", "Warning", "Danger", "Broken" };
 
     [Header("Healthbar")]
     [SerializeField] private Slider healthIndicator;
@@ -73,19 +73,19 @@ public class LevelUI : MonoBehaviour
                      PlayerController.Instance.manager.inventory[ResourceType.Uranium]);
 
         SetUpgrades(PlayerController.Instance.manager.upgradeCost,
-                    PlayerController.Instance.manager.upgrades[UpgradeType.damage],
-                    PlayerController.Instance.manager.upgrades[UpgradeType.miningSpeed],
-                    PlayerController.Instance.manager.upgrades[UpgradeType.shipSpeed],
-                    PlayerController.Instance.manager.upgrades[UpgradeType.shield]);
+                    PlayerController.Instance.manager.upgrades[UpgradeType.damage].level,
+                    PlayerController.Instance.manager.upgrades[UpgradeType.miningSpeed].level,
+                    PlayerController.Instance.manager.upgrades[UpgradeType.shipSpeed].level,
+                    PlayerController.Instance.manager.upgrades[UpgradeType.shieldRate].level);
 
-        SetRepairs(PlayerController.Instance.manager.miningLevel,
-                   PlayerController.Instance.manager.driveLevel,
-                   PlayerController.Instance.manager.shieldLevel);
+        SetRepairs(PlayerController.Instance.manager.miningPenalty.level,
+                   PlayerController.Instance.manager.drivePenalty.level,
+                   PlayerController.Instance.manager.shieldPenalty.level);
 
         SetHealth(PlayerController.Instance.currHealth / PlayerController.Instance.maxHealth,
                   PlayerController.Instance.GetComponentInChildren<PlayerShield>().currHealth / PlayerController.Instance.GetComponentInChildren<PlayerShield>().maxHealth);
 
-        SetWarp((float)PlayerController.Instance.manager.inventory[ResourceType.Uranium] / (PlayerController.Instance.uraniumPerWarp + (PlayerController.Instance.manager.DrivePenalty)),
+        SetWarp((float)PlayerController.Instance.manager.inventory[ResourceType.Uranium] / (PlayerController.Instance.uraniumPerWarp + (PlayerController.Instance.manager.drivePenalty)),
                 PlayerController.Instance.CheckWarp(false));
 
         SetTimer(Mothership.Instance.elapsedTime / Mothership.Instance.totalTime);
@@ -161,6 +161,9 @@ public class LevelUI : MonoBehaviour
     public void UpgradeShip(int upgrade)
     {
         PlayerController.Instance.manager.UpgradeShip((UpgradeType)upgrade);
+
+        if (upgrade == 3)
+            PlayerController.Instance.manager.UpgradeShip(UpgradeType.shieldRate, true);
     }
 
     public void RepairShip(int repair)

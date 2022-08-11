@@ -20,13 +20,16 @@ public class DebugTools : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.U))
-            PlayerController.Instance.manager.upgrades[UpgradeType.damage] -= 1;
+            PlayerController.Instance.manager.upgrades[UpgradeType.damage].level -= 1;
         if (Input.GetKeyDown(KeyCode.I))
-            PlayerController.Instance.manager.upgrades[UpgradeType.miningSpeed] -= 1;
+            PlayerController.Instance.manager.upgrades[UpgradeType.miningSpeed].level -= 1;
         if (Input.GetKeyDown(KeyCode.O))
-            PlayerController.Instance.manager.upgrades[UpgradeType.shield] -= 1;
+        {
+            PlayerController.Instance.manager.upgrades[UpgradeType.shieldHealth].level -= 1;
+            PlayerController.Instance.manager.upgrades[UpgradeType.shieldRate].level -= 1;
+        }
         if (Input.GetKeyDown(KeyCode.P))
-            PlayerController.Instance.manager.upgrades[UpgradeType.shipSpeed] -= 1;
+            PlayerController.Instance.manager.upgrades[UpgradeType.shipSpeed].level -= 1;
 
         if (Input.GetKeyDown(KeyCode.R))
             LevelGeneration.Instance.GenerateLevel();
@@ -43,10 +46,10 @@ public class DebugTools : MonoBehaviour
             Mothership.Instance.HideMothership();
 
         if (Input.GetKeyDown(KeyCode.Comma))
-            PlayerController.Instance.manager.miningLevel += Input.GetKey(KeyCode.LeftShift) ? 1 : -1;
+            PlayerController.Instance.manager.miningPenalty.level += Input.GetKey(KeyCode.LeftShift) ? 1 : -1;
         if (Input.GetKeyDown(KeyCode.Period))
-            PlayerController.Instance.manager.driveLevel += Input.GetKey(KeyCode.LeftShift) ? 1 : -1;
+            PlayerController.Instance.manager.drivePenalty.level += Input.GetKey(KeyCode.LeftShift) ? 1 : -1;
         if (Input.GetKeyDown(KeyCode.Slash))
-            PlayerController.Instance.manager.shieldLevel += Input.GetKey(KeyCode.LeftShift) ? 1 : -1;
+            PlayerController.Instance.manager.shieldPenalty.level += Input.GetKey(KeyCode.LeftShift) ? 1 : -1;
     }
 }

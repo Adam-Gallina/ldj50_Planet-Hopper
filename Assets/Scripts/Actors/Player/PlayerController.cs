@@ -71,7 +71,7 @@ public class PlayerController : CombatBase
         if (inp.down)
             y -= 1;
 
-        AddForce(new Vector3(x, 0, y), (moveSpeed + manager.SpeedMod));
+        AddForce(new Vector3(x, 0, y), moveSpeed + manager.shipSpeedMod);
     }
 
     private void HandleCombat()
@@ -92,7 +92,7 @@ public class PlayerController : CombatBase
 
         SetResourceIndicator(target?.transform);
 
-        if (inp.interact.down && manager.miningLevel > 0)
+        if (inp.interact.down && manager.miningPenalty.level < manager.maxRepair)
         {
             targetResource = target;
             LevelUI.Instance.SetMiningIndicator(target);
@@ -116,8 +116,8 @@ public class PlayerController : CombatBase
 
         if (Time.time > nextMine)
         {
-            nextMine = Time.time + miningSpeed + manager.MiningPenalty;
-            targetResource.Damage(gameObject, baseMiningStrength + manager.MiningSpeedMod);
+            nextMine = Time.time + miningSpeed + manager.miningPenalty;
+            targetResource.Damage(gameObject, baseMiningStrength + manager.miningSpeedMod);
         }
     }
 
@@ -161,17 +161,17 @@ public class PlayerController : CombatBase
 
     public bool CheckWarp(bool doWarp)
     {
-        if (manager.inventory[ResourceType.Uranium] < uraniumPerWarp + manager.DrivePenalty || manager.driveLevel <= 0)
+        if (manager.inventory[ResourceType.Uranium] < uraniumPerWarp + manager.drivePenalty || manager.drivePenalty.level >= manager.maxRepair)
             return false;
 
         if (doWarp)
-            manager.inventory[ResourceType.Uranium] -= uraniumPerWarp + manager.DrivePenalty;
+            manager.inventory[ResourceType.Uranium] -= uraniumPerWarp + (int)manager.drivePenalty;
         return true;
     }
 
     protected override void InitBullet(Projectile bullet)
     {
-        bullet.Initialize(gameObject, bulletSpeed, bulletDamage + manager.DamageMod, targetTag);
+        bullet.Initialize(gameObject, bulletSpeed, bulletDamage + manager.damageMod, targetTag);
     }
 
     protected override void Death(GameObject source)

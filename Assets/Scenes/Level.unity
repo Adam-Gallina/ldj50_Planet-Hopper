@@ -1297,11 +1297,21 @@ MonoBehaviour:
   maxUpgrade: 4
   upgradeCost: 2
   upgradeCostMod: 2
-  damageMod: 1
-  miningSpeedMod: 0.25
-  shipSpeedMod: 0.2
-  shieldHealthMod: 3
-  shieldRateMod: 0.05
+  damageMod:
+    level: 0
+    mod: 1
+  miningSpeedMod:
+    level: 0
+    mod: 0.25
+  shipSpeedMod:
+    level: 0
+    mod: 0.2
+  shieldHealthMod:
+    level: 0
+    mod: 3
+  shieldRateMod:
+    level: 0
+    mod: 0.05
   maxRepair: 3
   miningLevel: 0
   miningPenalty: 0.125
@@ -5125,10 +5135,10 @@ MonoBehaviour:
   shieldRepair: {fileID: 3454043313700801915}
   shieldRepairBtn: {fileID: 3454043312628550736}
   btnColors:
-  - {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
-  - {r: 1, g: 0.390566, b: 0.390566, a: 1}
-  - {r: 1, g: 0.9033593, b: 0.3339622, a: 1}
-  - {r: 0.5273253, g: 1, b: 0.48490566, a: 1}
+  - {r: 0.57267445, g: 1, b: 0.56037736, a: 1}
+  - {r: 1, g: 0.95077276, b: 0.39215684, a: 1}
+  - {r: 1, g: 0.3921569, b: 0.3921569, a: 1}
+  - {r: 0.5372549, g: 0.5372549, b: 0.5372549, a: 1}
   healthIndicator: {fileID: 3454043312939643181}
   shieldIndicator: {fileID: 3454043312116658359}
   warpIndicator: {fileID: 3454043313451583333}

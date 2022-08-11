@@ -103,9 +103,6 @@ public class Shield : HealthBase
 
     public override bool Damage(GameObject source, float damage)
     {
-        Debug.Log($"Hit by {source.name}, {Vector3.Distance(transform.position, source.transform.position)} / {shieldRadius} ({shieldRadius - shieldHitRadius})");
-        
-        //if (Vector3.Distance(transform.position, source.GetComponent<Collider>().ClosestPoint(transform.position)) < shieldRadius - shieldHitRadius)
         if (Vector3.Distance(transform.position, source.transform.position) < shieldRadius - shieldHitRadius)
             return false;
 

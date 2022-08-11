@@ -23,10 +23,10 @@ public class PlayerShield : Shield
 
     protected override void Update()
     {
-        maxHealth = baseShieldHealth + manager.ShieldHealthMod;
-        shieldRechargeRate = baseShieldRate + manager.ShieldRateMod;
-        shieldRechargeDelay = baseShieldDelay + manager.ShieldPenalty;
-        if (manager.shieldLevel <= 0)
+        maxHealth = baseShieldHealth + manager.shieldHealthMod;
+        shieldRechargeRate = baseShieldRate + manager.shieldRateMod;
+        shieldRechargeDelay = baseShieldDelay + manager.shieldPenalty;
+        if (manager.shieldPenalty.level <= 0)
             shieldRechargeDelay = -1;
     }
 }
