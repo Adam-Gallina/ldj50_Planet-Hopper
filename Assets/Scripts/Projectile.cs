@@ -5,9 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] protected float speed;
+    [HideInInspector] public BulletType type = BulletType.None;
 
-    protected CombatBase source;
+    protected GameObject source;
+    protected float speed;
     protected float damage;
     protected string targetTag;
 
@@ -24,7 +25,7 @@ public class Projectile : MonoBehaviour
             || other.gameObject.layer == Constants.ShieldLayer)
         {
             HealthBase hit = other.GetComponentInParent<HealthBase>();
-            if (hit && hit.Damage(source.gameObject, damage))
+            if (hit && hit.Damage(source, damage))
                 Despawn();
         }
         else if (other.gameObject.layer == Constants.EnvironmentLayer ||
@@ -34,16 +35,14 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void Initialize(CombatBase source, string targetTag)
+    public void Initialize(GameObject source, float speed, float damage, string targetTag)
     {
         this.source = source;
+        this.speed = speed;
+        this.damage = damage;
         this.targetTag = targetTag;
     }
 
-    public void SetDamage(float damage)
-    {
-        this.damage = damage;
-    }
     public void SetVelocity(Vector3 dir)
     {
         rb.velocity = dir.normalized * speed;
@@ -55,7 +54,7 @@ public class Projectile : MonoBehaviour
     public void Despawn()
     {
         SetVelocity(Vector3.zero);
-
-        source.ReturnToBulletPool(this);
+        
+        BulletPool.Instance.ReturnToBulletPool(this);
     }
 }

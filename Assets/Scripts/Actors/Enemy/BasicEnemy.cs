@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemy : MovementBase
+public class BasicEnemy : CombatBase
 {
     [Header("AI")]
     [SerializeField] protected float distFromEnemies;

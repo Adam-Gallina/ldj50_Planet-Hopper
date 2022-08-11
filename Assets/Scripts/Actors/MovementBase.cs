@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public abstract class MovementBase : CombatBase
+public abstract class MovementBase : HealthBase
 {
     [Header("Movement")]
     [SerializeField] protected float moveSpeed;

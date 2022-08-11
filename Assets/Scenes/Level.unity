@@ -1297,15 +1297,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currHealth: 0
+  moveSpeed: 1
   bulletSource:
   - {fileID: 658008472}
   - {fileID: 339701434}
-  bulletPrefab: {fileID: 5023235906778937110, guid: 2bce70401330e1f4c87106a699b57fe1, type: 3}
+  bulletType: 0
   fireSpeed: 0.1
+  bulletSpeed: 60
   bulletDamage: 1
-  specialSource: {fileID: 0}
   targetTag: 
-  moveSpeed: 1
   resourceIndicator: {fileID: 318275227}
   maxResourceDist: 7.5
   miningSpeed: 0.125
@@ -1689,6 +1689,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7644531205620005929, guid: 2f95c64b5a34bb144848e27666d21b9a, type: 3}
   m_PrefabInstance: {fileID: 2061673455}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1791198170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1791198171}
+  - component: {fileID: 1791198172}
+  m_Layer: 0
+  m_Name: Bullet Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1791198171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791198170}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1853849357}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1791198172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791198170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c213a54bbb757439955a9d823b64d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabData:
+  - type: 0
+    prefab: {fileID: 5023235906778937110, guid: 2bce70401330e1f4c87106a699b57fe1, type: 3}
+  - type: 1
+    prefab: {fileID: 8187746626215843588, guid: dc22ac5d0b525864594327df2658c724, type: 3}
 --- !u!4 &1806271201 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7644531207213211470, guid: 2f95c64b5a34bb144848e27666d21b9a, type: 3}
@@ -1723,6 +1771,7 @@ Transform:
   m_Children:
   - {fileID: 1711707562}
   - {fileID: 1499898201}
+  - {fileID: 1791198171}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

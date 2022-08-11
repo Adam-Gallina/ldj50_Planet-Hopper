@@ -123,15 +123,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 45
   currHealth: 0
+  moveSpeed: 0.5
   bulletSource:
   - {fileID: 4799028942257442573}
   - {fileID: 8140700501706014945}
-  bulletPrefab: {fileID: 8187746626215843588, guid: dc22ac5d0b525864594327df2658c724, type: 3}
+  bulletType: 1
   fireSpeed: 0.05
+  bulletSpeed: 60
   bulletDamage: 0.2
-  specialSource: {fileID: 0}
   targetTag: 
-  moveSpeed: 0.5
   distFromEnemies: 6
   moveSpeedFromEnemies: 5
   attackDist: 18

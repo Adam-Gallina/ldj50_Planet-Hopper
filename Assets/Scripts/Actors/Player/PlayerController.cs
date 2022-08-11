@@ -6,7 +6,7 @@ using UnityEngine;
 public enum UpgradeType { damage, miningSpeed, shipSpeed, shield }
 public enum RepairType { drill, drive, shield }
 [RequireComponent(typeof(InputController))]
-public class PlayerController : MovementBase
+public class PlayerController : CombatBase
 {
     public static PlayerController Instance;
 
@@ -294,11 +294,9 @@ public class PlayerController : MovementBase
         return true;
     }
 
-    protected override Projectile GetBullet()
+    protected override void InitBullet(Projectile bullet)
     {
-        Projectile bullet = base.GetBullet();
-        bullet.SetDamage(bulletDamage + upgrades[UpgradeType.damage] * damageMod);
-        return bullet;
+        bullet.Initialize(gameObject, bulletSpeed, bulletDamage + upgrades[UpgradeType.damage] * damageMod, targetTag);
     }
 
     protected override void Death(GameObject source)
