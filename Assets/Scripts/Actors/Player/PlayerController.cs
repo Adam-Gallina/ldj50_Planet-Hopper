@@ -46,7 +46,6 @@ public class PlayerController : CombatBase
 
     private void Update()
     {
-
         if (GameController.Instance.paused)
             return;
 
@@ -95,7 +94,7 @@ public class PlayerController : CombatBase
         if (inp.interact.down && manager.miningPenalty.level < manager.maxRepair)
         {
             targetResource = target;
-            LevelUI.Instance.SetMiningIndicator(target);
+            UIPopups.Instance.SetMiningIndicator(target);
         }
 
         if (inp.warp.down)

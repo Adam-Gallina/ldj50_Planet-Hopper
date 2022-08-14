@@ -13,6 +13,10 @@ public class LevelUI : MonoBehaviour
     [SerializeField] private Text electronicsCount;
     [SerializeField] private Text uraniumCount;
 
+    [Header("Upgrades anim")]
+    [SerializeField] private float zoomHeight = 8;
+    [SerializeField] private float zoomSpeed = 0.5f;
+
     [Header("Upgrades")]
     [SerializeField] private Text upgradeCost;
     [SerializeField] private Text damageUpgradeButton;
@@ -56,11 +60,6 @@ public class LevelUI : MonoBehaviour
     [SerializeField] private Text timeText;
     [SerializeField] private Text enemyText;
 
-    [Header("Mining Indicator")]
-    [SerializeField] private GameObject miningIndicator;
-    [SerializeField] private Slider miningPercent;
-    private Resource miningTarget;
-
     private void Awake()
     {
         Instance = this;
@@ -68,20 +67,6 @@ public class LevelUI : MonoBehaviour
 
     private void Update()
     {
-        SetInventory(PlayerController.Instance.manager.inventory[ResourceType.Metal],
-                     PlayerController.Instance.manager.inventory[ResourceType.Electronics],
-                     PlayerController.Instance.manager.inventory[ResourceType.Uranium]);
-
-        SetUpgrades(PlayerController.Instance.manager.upgradeCost,
-                    PlayerController.Instance.manager.upgrades[UpgradeType.damage].level,
-                    PlayerController.Instance.manager.upgrades[UpgradeType.miningSpeed].level,
-                    PlayerController.Instance.manager.upgrades[UpgradeType.shipSpeed].level,
-                    PlayerController.Instance.manager.upgrades[UpgradeType.shieldRate].level);
-
-        SetRepairs(PlayerController.Instance.manager.miningPenalty.level,
-                   PlayerController.Instance.manager.drivePenalty.level,
-                   PlayerController.Instance.manager.shieldPenalty.level);
-
         SetHealth(PlayerController.Instance.currHealth / PlayerController.Instance.maxHealth,
                   PlayerController.Instance.GetComponentInChildren<PlayerShield>().currHealth / PlayerController.Instance.GetComponentInChildren<PlayerShield>().maxHealth);
 
@@ -89,18 +74,16 @@ public class LevelUI : MonoBehaviour
                 PlayerController.Instance.CheckWarp(false));
 
         SetTimer(Mothership.Instance.elapsedTime / Mothership.Instance.totalTime);
-
-        UpdateMiningIndicator();
     }
 
-    private void SetInventory(int metal, int electronics, int uranium)
+    public void SetInventory(int metal, int electronics, int uranium)
     {
         metalCount.text = "Metal: " + metal;
         electronicsCount.text = "Electronics: " + electronics;
         uraniumCount.text = "Uranium: " + uranium;
     }
 
-    private void SetUpgrades(int cost, int damageLevel, int miningLevel, int speedLevel, int shieldLevel)
+    public void SetUpgrades(int cost, int damageLevel, int miningLevel, int speedLevel, int shieldLevel)
     {
         upgradeCost.text = "Cost: " + cost + " electronics";
         damageUpgradeButton.text = "Damage: Level " + (damageLevel + 1);
@@ -109,7 +92,7 @@ public class LevelUI : MonoBehaviour
         shieldUpgradeButton.text = "Shield: Level " + (shieldLevel + 1);
     }
 
-    private void SetRepairs(int drillLevel, int driveLevel, int shieldLevel)
+    public void SetRepairs(int drillLevel, int driveLevel, int shieldLevel)
     {
         drillRepair.text = "Mining Drill: " + repairLevelText[drillLevel];
         drillRepairBtn.color = btnColors[drillLevel];
@@ -121,41 +104,21 @@ public class LevelUI : MonoBehaviour
         shieldRepairBtn.color = btnColors[shieldLevel];
     }
 
-    private void SetHealth(float healthPercent, float shieldPercent)
+    public void SetHealth(float healthPercent, float shieldPercent)
     {
         healthIndicator.value = healthPercent;
         shieldIndicator.value = shieldPercent;
     }
 
-    private void SetWarp(float warpPercent, bool canWarp)
+    public void SetWarp(float warpPercent, bool canWarp)
     {
         warpIndicator.value = warpPercent;
         warpButton.interactable = canWarp;
     }
 
-    private void SetTimer(float timePercent)
+    public void SetTimer(float timePercent)
     {
         timer.value = timePercent;
-    }
-
-    public void SetMiningIndicator(Resource target)
-    {
-        miningTarget = target;
-    }
-
-    private void UpdateMiningIndicator()
-    {
-        if (miningTarget)
-        {
-            miningIndicator.SetActive(true);
-
-            miningIndicator.transform.position = Camera.main.WorldToScreenPoint(miningTarget.transform.position);
-            miningPercent.value = miningTarget.currHealth / miningTarget.maxHealth;
-        }
-        else
-        {
-            miningIndicator.SetActive(false);
-        }
     }
 
     public void UpgradeShip(int upgrade)
@@ -179,35 +142,19 @@ public class LevelUI : MonoBehaviour
 
     public bool ToggleMenu(Menu menu)
     {
-        if (currMenu != Menu.none && currMenu != menu)
-            return false;
-
         switch (menu)
         {
             case Menu.upgrades:
-                GameController.Instance.TogglePause(false);
-                upgradesMenu.SetActive(!upgradesMenu.activeSelf);
-                break;
+                return SetMenu(menu, !upgradesMenu.activeSelf);
             case Menu.pause:
-                pauseMenu.SetActive(!pauseMenu.activeSelf);
-                break;
+                return SetMenu(menu, !pauseMenu.activeSelf);
             case Menu.death:
-                deathMenu.SetActive(!deathMenu.activeSelf);
-                statsMenu.SetActive(!statsMenu.activeSelf);
-                break;
+                return SetMenu(menu, !deathMenu.activeSelf);
             case Menu.win:
-                winMenu.SetActive(!winMenu.activeSelf);
-                statsMenu.SetActive(!statsMenu.activeSelf);
-                break;
+                return SetMenu(menu, !winMenu.activeSelf);
         }
 
-        if (currMenu == menu)
-            currMenu = Menu.none;
-        else
-            currMenu = menu;
-
-        popupBackground.SetActive(currMenu != Menu.none);
-        return true;
+        return false;
     }
 
     public bool SetMenu(Menu menu, bool visible)
@@ -218,8 +165,16 @@ public class LevelUI : MonoBehaviour
         switch (menu)
         {
             case Menu.upgrades:
-                upgradesMenu.SetActive(visible);
-                GameController.Instance.SetPause(visible, false);
+                if (visible)
+                {
+                    GameController.Instance.SetPause(visible, false);
+                    CameraController.Instance.FocusOnTarget(zoomHeight, zoomSpeed, () => upgradesMenu.SetActive(visible));
+                }
+                else
+                {
+                    upgradesMenu.SetActive(visible);
+                    CameraController.Instance.UnfocusTarget(zoomSpeed, () => GameController.Instance.SetPause(visible, false));
+                }
                 break;
             case Menu.pause:
                 pauseMenu.SetActive(visible);
@@ -239,7 +194,7 @@ public class LevelUI : MonoBehaviour
         else
             currMenu = menu;
 
-        popupBackground.SetActive(currMenu != Menu.none);
+        popupBackground.SetActive(currMenu != Menu.none && currMenu != Menu.upgrades);
         return true;
     }
 

@@ -44,6 +44,23 @@ public class PlayerManager : MonoBehaviour
         repairs.Add(RepairType.shield, shieldPenalty);
     }
 
+    private void Update()
+    {
+        LevelUI.Instance.SetInventory(inventory[ResourceType.Metal],
+                                      inventory[ResourceType.Electronics],
+                                      inventory[ResourceType.Uranium]);
+
+        LevelUI.Instance.SetUpgrades(upgradeCost,
+                                     upgrades[UpgradeType.damage].level,
+                                     upgrades[UpgradeType.miningSpeed].level,
+                                     upgrades[UpgradeType.shipSpeed].level,
+                                     upgrades[UpgradeType.shieldRate].level);
+
+        LevelUI.Instance.SetRepairs(repairs[RepairType.drill].level,
+                                    repairs[RepairType.drive].level,
+                                    repairs[RepairType.shield].level);
+    }
+
     public void AddResource(ResourceType resource, int amount)
     {
         inventory[resource] += amount;

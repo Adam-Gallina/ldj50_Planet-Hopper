@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DebugTools : MonoBehaviour
 {
+    private bool focus = false;
+    public float focusDist;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -51,5 +54,20 @@ public class DebugTools : MonoBehaviour
             PlayerController.Instance.manager.drivePenalty.level += Input.GetKey(KeyCode.LeftShift) ? 1 : -1;
         if (Input.GetKeyDown(KeyCode.Slash))
             PlayerController.Instance.manager.shieldPenalty.level += Input.GetKey(KeyCode.LeftShift) ? 1 : -1;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (focus)
+            {
+                GameController.Instance.SetPause(false, false);
+                CameraController.Instance.UnfocusTarget();
+            }
+            else
+            {
+                GameController.Instance.SetPause(true, false);
+                CameraController.Instance.FocusOnTarget(focusDist);
+            }
+            focus = !focus;
+        }
     }
 }
