@@ -97,7 +97,5 @@ public class Mothership : BasicEnemy
         LevelUI.Instance.ToggleMenu(Menu.win);
 
         GameController.Instance.SetPause(true, false);
-
-        base.Death(source);
     }
 }
