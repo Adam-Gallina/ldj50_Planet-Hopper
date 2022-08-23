@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 public enum UpgradeType { damage, miningSpeed, shipSpeed, shieldHealth, shieldRate }
-public enum RepairType { drill, drive, shield }
+public enum RepairType { drill, drive, shield, primaryGun, specialWeapon }
 public class PlayerManager : MonoBehaviour
 {
     public Dictionary<ResourceType, int> inventory = new Dictionary<ResourceType, int>();

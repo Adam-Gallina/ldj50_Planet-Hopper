@@ -19,10 +19,10 @@ public class LevelUI : MonoBehaviour
 
     [Header("Upgrades")]
     [SerializeField] private Text upgradeCost;
-    [SerializeField] private Text damageUpgradeButton;
-    [SerializeField] private Text miningUpgradeButton;
-    [SerializeField] private Text speedUpgradeButton;
-    [SerializeField] private Text shieldUpgradeButton;
+    [SerializeField] private Text damageLevelText;
+    [SerializeField] private Text miningLevelText;
+    [SerializeField] private Text speedLevelText;
+    [SerializeField] private Text shieldLevelText;
 
     [Header("Repairs")]
     [SerializeField] private Text drillRepair;
@@ -85,11 +85,11 @@ public class LevelUI : MonoBehaviour
 
     public void SetUpgrades(int cost, int damageLevel, int miningLevel, int speedLevel, int shieldLevel)
     {
-        upgradeCost.text = "Cost: " + cost + " electronics";
-        damageUpgradeButton.text = "Damage: Level " + (damageLevel + 1);
-        miningUpgradeButton.text = "Mining Speed: Level " + (miningLevel + 1);
-        speedUpgradeButton.text = "Ship Speed: Level " + (speedLevel + 1);
-        shieldUpgradeButton.text = "Shield: Level " + (shieldLevel + 1);
+        upgradeCost.text = cost + " electronics";
+        damageLevelText.text = "Level " + (damageLevel + 1);
+        miningLevelText.text = "Level " + (miningLevel + 1);
+        speedLevelText.text = "Level " + (speedLevel + 1);
+        shieldLevelText.text = "Level " + (shieldLevel + 1);
     }
 
     public void SetRepairs(int drillLevel, int driveLevel, int shieldLevel)

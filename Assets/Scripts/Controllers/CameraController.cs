@@ -23,6 +23,7 @@ public class CameraController : MonoBehaviour
     private Vector3 targetRot;
     private Vector3 startPos;
     private Vector3 startRot;
+    private Vector3 camBaseStartPos;
     private float currFocusTime = 0;
     private bool focusing = false;
     private UnityAction onFocusEnd;
@@ -53,6 +54,7 @@ public class CameraController : MonoBehaviour
                 if (pt > 1)
                     pt = 1;
 
+                transform.position = camBaseStartPos + (target.position - camBaseStartPos) * pt;
                 focusCam.localPosition = startPos + (targetPos - startPos) * pt;
                 focusCam.localEulerAngles = startRot + (targetRot - startRot) * pt;
 
@@ -106,6 +108,7 @@ public class CameraController : MonoBehaviour
             }
         }
 
+        camBaseStartPos = transform.position;
         targetPos = new Vector3(focusPos.x, zoomHeight, focusPos.z);
         targetRot = new Vector3(focusRot.x, target.localEulerAngles.y, focusRot.z);
         this.onFocusEnd = onFocusEnd;
@@ -135,6 +138,7 @@ public class CameraController : MonoBehaviour
             currFocusTime = 0;
         }
 
+        camBaseStartPos = transform.position;
         targetPos = defaultPos;
         targetRot = defaultRot;
         this.onFocusEnd = onFocusEnd;
