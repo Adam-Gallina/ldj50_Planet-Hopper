@@ -28,7 +28,7 @@ public class PlayerShield : Shield
         maxHealth = baseShieldHealth + manager.shieldHealthMod;
         shieldRechargeRate = baseShieldRate + manager.shieldRateMod;
         shieldRechargeDelay = baseShieldDelay + manager.shieldPenalty;
-        if (manager.shieldPenalty.level <= 0)
+        if (manager.shieldPenalty.level < 0)
             shieldRechargeDelay = -1;
     }
 }
