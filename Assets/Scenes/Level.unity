@@ -11294,7 +11294,7 @@ MonoBehaviour:
   electronicsCount: {fileID: 3454043312204337213}
   uraniumCount: {fileID: 3454043312535852412}
   zoomHeight: 10
-  zoomSpeed: 0.3
+  zoomSpeed: 0.175
   upgradeCost: {fileID: 1517674219}
   damageLevelText: {fileID: 629672372}
   miningLevelText: {fileID: 698360199}

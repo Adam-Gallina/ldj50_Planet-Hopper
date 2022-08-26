@@ -27,6 +27,9 @@ public class PlayerManager : MonoBehaviour
     public Upgrade shieldPenalty;
     public Dictionary<RepairType, Upgrade> repairs = new Dictionary<RepairType, Upgrade>();
 
+    //[Header("Weapon Mods")]
+    public List<WeaponModBase> weaponMods = new List<WeaponModBase>();
+
     private void Awake()
     {
         inventory.Add(ResourceType.Metal, 0);
@@ -112,6 +115,13 @@ public class PlayerManager : MonoBehaviour
         inventory[ResourceType.Metal] -= 5;
 
         return true;
+    }
+    #endregion
+
+    #region Weapon Mods
+    public void AddWeaponMod(WeaponModBase newMod)
+    {
+        weaponMods.Add(newMod);
     }
     #endregion
 }

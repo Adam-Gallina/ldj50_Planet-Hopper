@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ResourceType { Metal, Electronics, Uranium }
+public enum ResourceType { Metal, Electronics, Uranium, WeaponMod }
 public class Resource : HealthBase
 {
-    [SerializeField] private ResourceType resourceType;
-    [SerializeField] private int resourceValue = 1;
+    [SerializeField] protected ResourceType resourceType;
+    [SerializeField] protected int resourceValue = 1;
 
-    protected override void Death(GameObject source)
+    protected virtual void OnCollect()
     {
         PlayerController.Instance.manager.AddResource(resourceType, resourceValue);
 
         Stats.Instance.resourcesCollected++;
+    }
+
+    protected override void Death(GameObject source)
+    {
+        OnCollect();
 
         base.Death(source);
     }
