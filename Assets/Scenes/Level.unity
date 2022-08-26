@@ -5310,13 +5310,13 @@ MonoBehaviour:
   maxRepair: 3
   miningPenalty:
     level: 0
-    mod: 0
+    mod: 0.125
   drivePenalty:
     level: 0
-    mod: 0
+    mod: 1
   shieldPenalty:
     level: 0
-    mod: 0
+    mod: 2
   weaponMods: []
 --- !u!1 &1320839858
 GameObject:
