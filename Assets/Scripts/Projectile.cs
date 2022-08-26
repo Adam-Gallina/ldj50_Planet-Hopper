@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct ProjectileStats
+{
+    [HideInInspector] public float speed;
+    [HideInInspector] public float damage;
+    [HideInInspector] public string targetTag;
+}
+
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour
 {
     [HideInInspector] public BulletType type = BulletType.None;
 
     protected GameObject source;
-    protected float speed;
-    protected float damage;
-    protected string targetTag;
+    protected ProjectileStats stats;
 
     protected Rigidbody rb;
 
@@ -21,10 +26,10 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(targetTag))
+        if (other.CompareTag(stats.targetTag))
         {
             HealthBase hit = other.GetComponentInParent<HealthBase>();
-            if (hit && hit.Damage(gameObject, damage))
+            if (hit && hit.Damage(gameObject, stats.damage))
                 Despawn();
         }
         else if (other.gameObject.layer == Constants.EnvironmentLayer ||
@@ -34,17 +39,15 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void Initialize(GameObject source, float speed, float damage, string targetTag)
+    public void Initialize(GameObject source, ProjectileStats stats)
     {
         this.source = source;
-        this.speed = speed;
-        this.damage = damage;
-        this.targetTag = targetTag;
+        this.stats = stats;
     }
 
     public void SetVelocity(Vector3 dir)
     {
-        rb.velocity = dir.normalized * speed;
+        rb.velocity = dir.normalized * stats.speed;
 
         if (dir.magnitude > 0)
             transform.forward = dir;

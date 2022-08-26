@@ -142,6 +142,62 @@ MonoBehaviour:
   fireSpeed: 0.001
   bulletSpeed: 60
   bulletDamage: 0.1
+  weapon:
+    modName: 
+    outputCount: 1
+    damageMod: 1
+    speedMod: 1
+    outputs:
+    - modName: 
+      outputCount: 1
+      damageMod: 1
+      speedMod: 1
+      outputs:
+      - modName: 
+        outputCount: 1
+        damageMod: 1
+        speedMod: 1
+        outputs:
+        - modName: 
+          outputCount: 1
+          damageMod: 1
+          speedMod: 1
+          outputs:
+          - modName: 
+            outputCount: 1
+            damageMod: 1
+            speedMod: 1
+            outputs:
+            - modName: 
+              outputCount: 1
+              damageMod: 1
+              speedMod: 1
+              outputs:
+              - modName: 
+                outputCount: 1
+                damageMod: 1
+                speedMod: 1
+                outputs:
+                - modName: 
+                  outputCount: 1
+                  damageMod: 1
+                  speedMod: 1
+                  outputs:
+                  - modName: 
+                    outputCount: 1
+                    damageMod: 1
+                    speedMod: 1
+                    outputs:
+                    - modName: 
+                      outputCount: 1
+                      damageMod: 1
+                      speedMod: 1
+                      outputs:
+                      - modName: 
+                        outputCount: 1
+                        damageMod: 1
+                        speedMod: 1
+  bulletOffset: 0
   targetTag: 
   distFromEnemies: 0
   moveSpeedFromEnemies: 0

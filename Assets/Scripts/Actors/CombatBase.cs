@@ -14,6 +14,8 @@ public abstract class CombatBase : MovementBase
     protected float nextShot = 0;
     [SerializeField] protected float bulletSpeed = 60;
     [SerializeField] protected float bulletDamage = 1;
+    [SerializeField] protected WeaponModBase weapon = new WeaponModBase();
+    [SerializeField] private float bulletOffset;
 
     //[SerializeField] private Transform specialSource;
 
@@ -32,20 +34,32 @@ public abstract class CombatBase : MovementBase
         {
             nextShot = Time.time + fireSpeed;
 
-            Projectile bullet = BulletPool.Instance.GetBullet(bulletType);
-            InitBullet(bullet);
-            bullet.transform.position = bulletSource[currSource].position;
-            bullet.gameObject.SetActive(true);
-            bullet.SetVelocity(bulletSource[currSource].forward);
+            List<ProjectileStats> bullets = weapon.GetBullets(GetBaseProjectileStats());
+
+            foreach (ProjectileStats stats in bullets)
+            {
+                Projectile b = BulletPool.Instance.GetBullet(bulletType);
+                b.Initialize(gameObject, stats);
+
+                Vector3 mod = Random.insideUnitSphere * bulletOffset;
+                b.transform.position = bulletSource[currSource].position + mod;
+                b.gameObject.SetActive(true);
+                b.SetVelocity(bulletSource[currSource].forward);
+            }
 
             if (++currSource >= bulletSource.Length)
                 currSource = 0;
         }
     }
 
-    protected virtual void InitBullet(Projectile bullet)
+    protected virtual ProjectileStats GetBaseProjectileStats()
     {
-        bullet.Initialize(gameObject, bulletSpeed, bulletDamage, targetTag);
+        return new ProjectileStats
+        {
+            damage = bulletDamage,
+            speed = bulletSpeed,
+            targetTag = targetTag
+        };
     }
 
     protected virtual void FireSpecial()

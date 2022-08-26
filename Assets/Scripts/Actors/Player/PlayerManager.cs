@@ -122,6 +122,8 @@ public class PlayerManager : MonoBehaviour
     public void AddWeaponMod(WeaponModBase newMod)
     {
         weaponMods.Add(newMod);
+
+        Debug.Log($"Collected {newMod.modName} ({weaponMods.Count}");
     }
     #endregion
 }

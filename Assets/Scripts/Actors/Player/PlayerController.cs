@@ -168,9 +168,14 @@ public class PlayerController : CombatBase
         return true;
     }
 
-    protected override void InitBullet(Projectile bullet)
+    protected override ProjectileStats GetBaseProjectileStats()
     {
-        bullet.Initialize(gameObject, bulletSpeed, bulletDamage + manager.damageMod, targetTag);
+        return new ProjectileStats 
+        {
+            damage = bulletDamage + manager.damageMod,
+            speed = bulletSpeed,
+            targetTag = targetTag
+        };
     }
 
     protected override void Death(GameObject source)
