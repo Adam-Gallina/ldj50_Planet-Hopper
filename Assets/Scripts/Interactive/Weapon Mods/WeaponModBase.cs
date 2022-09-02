@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class WeaponModBase
+public class WeaponModBase : MonoBehaviour
 {
     public string modName = "Default Mod";
     //public int inputCount;
@@ -11,12 +10,31 @@ public class WeaponModBase
     [SerializeField] protected float damageMod = 1;
     [SerializeField] protected float speedMod = 1;
 
-    // Serialized for debug
-    [SerializeField] protected WeaponModBase[] outputs;
+    protected List<WeaponModBase> outputs;
 
-    public WeaponModBase()
+    private void Awake()
     {
-        outputs = new WeaponModBase[outputCount];
+        outputs = new List<WeaponModBase>();
+        for (int i = 0; i < outputCount; i++)
+            outputs.Add(null);
+    }
+
+    public bool SetOutput(int index, WeaponModBase mod)
+    {
+        if (index < 0 || index >= outputCount)
+            return false;
+
+        outputs[index] = mod;
+        return true;
+    }
+
+    public bool RemoveOutput(int index)
+    {
+        if (index < 0 || index >= outputCount)
+            return false;
+
+        outputs[index] = null;
+        return true;
     }
 
     protected virtual ProjectileStats ModBullet(ProjectileStats bullet)

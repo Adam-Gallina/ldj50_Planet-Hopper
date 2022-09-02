@@ -100,6 +100,8 @@ MonoBehaviour:
   fireSpeed: 1
   bulletSpeed: 60
   bulletDamage: 0.2
+  weapon: {fileID: 950570918242860620, guid: c6555014cd4fbee47bb24267a9005de6, type: 3}
+  bulletOffset: 0
   targetTag: 
   distFromEnemies: 6
   moveSpeedFromEnemies: 5

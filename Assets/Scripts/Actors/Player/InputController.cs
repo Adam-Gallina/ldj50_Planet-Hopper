@@ -17,6 +17,7 @@ public class InputController : MonoBehaviour
     public Key special = KeyCode.Mouse1;
 
     public Key pause = KeyCode.Escape;
+    public Key weaponSetup = "I";
 
     private static Key[] keys;
 
@@ -38,7 +39,8 @@ public class InputController : MonoBehaviour
             upgrades,
             fire,
             special,
-            pause
+            pause,
+            weaponSetup
         };
     }
 
@@ -52,8 +54,20 @@ public class InputController : MonoBehaviour
         if (upgrades.down)
             LevelUI.Instance.ToggleMenu(Menu.upgrades);
 
-        if (pause.down && LevelUI.Instance.currMenu != Menu.upgrades)
-            GameController.Instance.TogglePause();
+        if (weaponSetup.down)
+            LevelUI.Instance.ToggleMenu(Menu.weaponSetup);
+
+        if (pause.down)
+        {
+            if (LevelUI.Instance.currMenu == Menu.upgrades || LevelUI.Instance.currMenu == Menu.weaponSetup)
+            {
+                LevelUI.Instance.ToggleMenu(LevelUI.Instance.currMenu);
+            }
+            else
+            {
+                GameController.Instance.TogglePause();
+            }
+        }
     }
 }
 

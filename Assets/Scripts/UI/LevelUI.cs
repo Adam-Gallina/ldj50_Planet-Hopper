@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum Menu { pause, death, win, none, upgrades }
+public enum Menu { pause, death, win, none, upgrades, weaponSetup }
 public class LevelUI : MonoBehaviour
 {
     public static LevelUI Instance;
@@ -52,6 +52,7 @@ public class LevelUI : MonoBehaviour
     [SerializeField] private GameObject deathMenu;
     [SerializeField] private GameObject winMenu;
     [SerializeField] private GameObject statsMenu;
+    [SerializeField] private GameObject weaponMenu;
     [HideInInspector] public Menu currMenu = Menu.none;
 
     [Header("Stats")]
@@ -152,6 +153,8 @@ public class LevelUI : MonoBehaviour
                 return SetMenu(menu, !deathMenu.activeSelf);
             case Menu.win:
                 return SetMenu(menu, !winMenu.activeSelf);
+            case Menu.weaponSetup:
+                return SetMenu(menu, !weaponMenu.activeSelf);
         }
 
         return false;
@@ -186,6 +189,10 @@ public class LevelUI : MonoBehaviour
             case Menu.win:
                 winMenu.SetActive(visible);
                 statsMenu.SetActive(visible);
+                break;
+            case Menu.weaponSetup:
+                GameController.Instance.SetPause(visible, false);
+                weaponMenu.SetActive(visible);
                 break;
         }
 

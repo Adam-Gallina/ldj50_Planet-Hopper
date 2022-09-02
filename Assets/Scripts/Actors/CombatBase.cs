@@ -14,12 +14,20 @@ public abstract class CombatBase : MovementBase
     protected float nextShot = 0;
     [SerializeField] protected float bulletSpeed = 60;
     [SerializeField] protected float bulletDamage = 1;
-    [SerializeField] protected WeaponModBase weapon = new WeaponModBase();
+    [SerializeField] protected WeaponModBase weapon;
     [SerializeField] private float bulletOffset;
 
     //[SerializeField] private Transform specialSource;
 
     [HideInInspector] public string targetTag;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        if (!weapon)
+            Debug.LogWarning($"{name} has no weapon set, won't be able to shoot");
+    }
 
     protected override void Start()
     {
@@ -34,7 +42,7 @@ public abstract class CombatBase : MovementBase
         {
             nextShot = Time.time + fireSpeed;
 
-            List<ProjectileStats> bullets = weapon.GetBullets(GetBaseProjectileStats());
+            List<ProjectileStats> bullets = weapon?.GetBullets(GetBaseProjectileStats());
 
             foreach (ProjectileStats stats in bullets)
             {
